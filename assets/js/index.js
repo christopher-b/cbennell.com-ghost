@@ -11,3 +11,14 @@ import infiniteScroll from "./infiniteScroll";
 // Call the menu and infinite scroll functions
 menuOpen();
 infiniteScroll();
+
+// import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+// import 'prismjs';
+
+console.log('Theme JS loaded!');
+
+if (import.meta.hot) {
+  import.meta.hot.accept(() => {
+    console.log('HMR: JS updated');
+  });
+}

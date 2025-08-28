@@ -1,21 +1,23 @@
-# Ghost Starter Theme
+# Wraith: A Ghost theme using Vite & TailswindCSS
 
-A starter framework for Ghost themes! Click **Use this template** to create a copy of this repo for everything you need to get started developing a custom Ghost theme.
+This theme is intended as a starting point for Ghost themes powered by Vite and TailwindCSS, and any other modern JS goodness you want to bring. The visual design is bare bones, it is intended to be fully-featured out of the box. It also solves some problems around compatibility between Vite and Ghost.
 
-&nbsp;
+It also includes Prism as a Vite module, so you can easily customize your code highlights.
 
-## First time using a Ghost theme?
+This theme is based on the [Ghost Starter theme](https://github.com/TryGhost/Starter), and was inspired by [biswajit-saha/vite-ghost-theme](https://github.com/biswajit-saha/vite-ghost-theme).
 
-Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.
+## How to Use This Theme
 
-We've documented this starter theme pretty heavily so that it should be possible to work out what's going on just by reading the code and the comments. We also have a robust set of resources to help you build awesome custom themes:
+Develoment mode theme setting.
 
-- The official [theme documentation](https://ghost.org/docs/themes) is the complete resource for everything you need to know about Ghost theme development
-- [Tutorials](https://ghost.org/tutorials/) offer a step-by-step guide to building the most common features in Ghost themes
-- The [Ghost VS Code extension](https://marketplace.visualstudio.com/items?itemName=TryGhost.ghost) speeds up theme development and provides quick access to helpful info
-- All of Ghost's official themes are [open source](https://github.com/tryghost) and are a great reference for learning how to create a theme
+## Theme Features
 
-&nbsp;
+Production / development assets
+
+## Todo
+
+ - [] Asses vite proxy server config
+
 
 ## Starter theme features
 
@@ -33,7 +35,7 @@ We've documented this starter theme pretty heavily so that it should be possible
 
 🚢&nbsp;Ghost's [GH Deploy Action](.github/workflows/deploy-theme.yml) included by default. [Learn more how to deploy your theme automatically](https://github.com/TryGhost/action-deploy-theme)
 
-➕&nbsp;Extensible by design. Rollup's configuration structure makes it easy to add [any number of plugins easily](https://github.com/rollup/plugins). 
+➕&nbsp;Extensible by design. Rollup's configuration structure makes it easy to add [any number of plugins easily](https://github.com/rollup/plugins).
 
 &nbsp;
 
@@ -48,46 +50,15 @@ The main files are:
 - [`tag.hbs`](tag.hbs) - Used for tag archives
 - [`author.hbs`](author.hbs) - Used for author archives
 
-One neat trick is that you can also create custom one-off templates just by adding the slug of a page to a template file. For example:
-
-- `page-about.hbs` - Custom template for the `/about/` page
-- `tag-news.hbs` - Custom template for `/tag/news/` archive
-- `author-jamie.hbs` - Custom template for `/author/jamie/` archive
-
-&nbsp;
 
 ## Development guide
-
-The Starter theme provides a first-class development experience out of the box. 
-
-&nbsp;
-
-### Setup
-
-To see realtime changes during development, symlink the Starter theme folder to the `content/themes` folder in your local Ghost install. 
-
-```bash
-ln -s /path/to/starter /ghost/content/themes/starter
-```
-
-Restart Ghost and select the Starter theme from **Settings**.
-
-From the theme's root directory, install the dependencies:
-
-```bash
-npm install
-```
-
-If Node isn't installed, follow the [official Node installation guide](https://nodejs.org/).
-
-&nbsp;
 
 ### Start development mode
 
 From the Starter theme folder, start development mode:
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 Changes you make to your styles, scripts, and Handlebars files will show up automatically in the browser. CSS and Javascript will be compiled and output to the `built` folder.
@@ -116,10 +87,8 @@ Use `gscan` to test your theme for compatibility with Ghost:
 npm run test
 ```
 
-&nbsp;
-
 
 
 ## Copyright & License
 
-Copyright (c) 2013-2025 Ghost Foundation - Released under the [MIT license](LICENSE).
+Copyright (c) 2013-2025 - Released under the [MIT license](LICENSE).

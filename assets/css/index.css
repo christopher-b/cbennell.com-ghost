@@ -9,21 +9,21 @@ production stylesheet in assets/built/screen.css using: npm run dev
 /* ---------------------------------------------------------- */
 
 /* Base components */
-@import "vars.css";
-@import "components/global.css";
-@import "components/forms.css";
-@import "components/buttons.css";
+@import "./vars.css";
+@import "./components/global.css";
+@import "./components/forms.css";
+@import "./components/buttons.css";
 
 /* Ghost components */
-@import "ghost/header.css";
-@import "ghost/content.css";
-@import "ghost/readmore.css";
-@import "ghost/members.css";
-@import "ghost/errors.css";
-@import "ghost/footer.css";
-@import "ghost/badge.css";
-@import "ghost/pagination.css";
-@import "ghost/comments.css";
+@import "./ghost/header.css";
+@import "./ghost/content.css";
+@import "./ghost/readmore.css";
+@import "./ghost/members.css";
+@import "./ghost/errors.css";
+@import "./ghost/footer.css";
+@import "./ghost/badge.css";
+@import "./ghost/pagination.css";
+@import "./ghost/comments.css";
 
 
 
@@ -59,7 +59,7 @@ html,
     padding: 8vmin 0;
 }
 
-.gh-postfeed > *:first-child {
+.gh-postfeed>*:first-child {
     grid-column: 1 / -1;
 }
 
@@ -136,7 +136,7 @@ html,
     padding: 0 3vmin;
 }
 
-.gh-card-content > strong {
+.gh-card-content>strong {
     display: inline-block;
     padding: 1px 0;
     font-weight: 500;
@@ -158,7 +158,7 @@ html,
     margin: 4vmin 0 0 0;
 }
 
-.gh-page-head > p {
+.gh-page-head>p {
     max-width: 720px;
     margin: 0.3em auto 0;
     padding: 0 6vmin;
@@ -168,7 +168,7 @@ html,
 }
 
 @media (max-width: 700px) {
-    .gh-page-head > p {
+    .gh-page-head>p {
         font-size: 1.6rem;
     }
 }
@@ -241,13 +241,13 @@ html,
     margin: 0 0.75vmin;
 }
 
-.gh-author-links a + a:before {
+.gh-author-links a+a:before {
     display: block;
     content: "";
     margin: 0 1.25vmin 0 0;
     height: 1em;
     width: 1px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     transform: rotate(20deg);
 }
 
