@@ -1,0 +1,41 @@
+<header class="p-12">
+  <nav>
+    <div>
+      <a href="{{@site.url}}">
+        {{#if @site.logo}}
+          <img src="{{@site.logo}}" alt="{{@site.title}}" />
+        {{else}}
+          <h1 class="text-2xl">{{@site.title}}</h1>
+        {{/if}}
+      </a>
+    </div>
+
+    <div>
+      {{navigation}}
+    </div>
+
+    <div class="flex items-center space-x-4">
+      {{#if @site.facebook}}
+        <a href="{{social_url type="facebook"}}" class="w-5 h-5" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+      {{/if}}
+
+      {{#if @site.twitter}}
+        <a href="{{social_url type="twitter"}}" class="w-5 h-5" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+      {{/if}}
+
+      <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" class="w-5 h-5" title="RSS" target="_blank" rel="noopener">
+        {{> "icons/rss"}}
+      </a>
+
+      {{search}}
+
+      {{#if @site.members_enabled}}
+        {{^if @member}}
+          <a class="" href="{{@site.signup_url}}">Subscribe</a>
+        {{else}}
+          <a class="" href="#/portal/account">Account</a>
+        {{/if}}
+      {{/if}}
+    </div>
+  </nav>
+</header>

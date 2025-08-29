@@ -1,6 +1,6 @@
 # Wraith: A Ghost theme using Vite & TailswindCSS
 
-This theme is intended as a starting point for Ghost themes powered by Vite and TailwindCSS, and any other modern JS goodness you want to bring. The visual design is bare bones, it is intended to be fully-featured out of the box. It also solves some problems around compatibility between Vite and Ghost.
+This theme is intended as a starting point for Ghost themes powered by Vite and TailwindCSS, and any other modern JS goodness you want to bring. The visual design is intentionally bare bones, but it is intended to be fully-featured out of the box. It also solves some problems around compatibility between Vite and Ghost.
 
 It also includes Prism as a Vite module, so you can easily customize your code highlights.
 

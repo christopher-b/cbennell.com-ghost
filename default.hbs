@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{#unless @custom.development_mode}}
-        {{> "vite-assets-header"}}
+        {{> "vite-assets/head"}}
     {{/unless}}
 
     <title>{{meta_title}}</title>
@@ -13,14 +13,14 @@
     {{ghost_head}}
 </head>
 <body class="{{body_class}}">
-    <div class="gh-viewport">
-        {{> "header"}}
+    <div class="flex flex-col min-h-screen bg-white">
+        {{> "components/header"}}
 
-        <main class="gh-main">
+        <main class="flex flex-col grow shrink-0 basis-auto">
             {{{body}}}
         </main>
 
-        {{> "footer"}}
+        {{> "components/footer"}}
     </div>
 
     {{#if @custom.development_mode}}
@@ -28,7 +28,7 @@
         <script type="module">import "http://localhost:3000/@vite/client";</script>
         <script type="module" src="http://localhost:3000/assets/js/index.js"></script>
     {{else}}
-        {{> "vite-assets-footer"}}
+        {{> "vite-assets/foot"}}
     {{/if}}
 
     {{ghost_foot}}
