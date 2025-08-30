@@ -1,85 +1,86 @@
 {
-    "name": "wraith-ghost-theme",
-    "description": "A Ghost theme using Vite & TailwindCSS",
-    "demo": "https://wraith-demo.cbennell.com",
-    "version": "0.0.1",
-    "engines": {
-        "ghost": ">=5.0.0"
+  "name": "wraith-ghost-theme",
+  "description": "A Ghost theme using Vite & TailwindCSS",
+  "demo": "https://wraith-demo.cbennell.com",
+  "version": "0.0.1",
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "license": "MIT",
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "zip": "yarn build && npx bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
+    "test": "npx gscan .",
+    "pretest": "yarn build"
+  },
+  "author": {
+    "name": "Christopher Bennell",
+    "email": "cbennell@hey.com",
+    "url": "https://cbennell.com"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Magazine"
+    ]
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christopher-b/wraith.git"
+  },
+  "bugs": "https://github.com/christopher-b/wraith/issues",
+  "contributors": "https://github.com/christopher-b/wraith/graphs/contributors",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.12",
+    "archiver": "^7.0.1",
+    "prismjs": "^1.30.0",
+    "tailwindcss": "^4.1.12",
+    "vite": "^7.1.3",
+    "vite-plugin-prismjs": "^0.0.11"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "config": {
+    "card_assets": true,
+    "custom": {
+      "development_mode": {
+        "type": "boolean",
+        "default": false
+      }
     },
-    "license": "MIT",
-    "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg"
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1200
+      },
+      "xl": {
+        "width": 2000
+      }
     },
-    "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "zip": "yarn build && npx bestzip $npm_package_name.zip assets/* partials/* members/* *.hbs package.json",
-        "test": "npx gscan .",
-        "pretest": "yarn build"
-    },
-    "author": {
-        "name": "Christopher Bennell",
-        "email": "cbennell@hey.com",
-        "url": "https://cbennell.com"
-    },
-    "gpm": {
-        "type": "theme",
-        "categories": [
-            "Minimal",
-            "Magazine"
-        ]
-    },
-    "keywords": [
-        "ghost",
-        "theme",
-        "ghost-theme"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/christopher-b/wraith.git"
-    },
-    "bugs": "https://github.com/christopher-b/wraith/issues",
-    "contributors": "https://github.com/christopher-b/wraith/graphs/contributors",
-    "devDependencies": {
-        "@tailwindcss/typography": "^0.5.16",
-        "@tailwindcss/vite": "^4.1.12",
-        "archiver": "^7.0.1",
-        "prismjs": "^1.30.0",
-        "tailwindcss": "^4.1.12",
-        "vite": "^7.1.3",
-        "vite-plugin-prismjs": "^0.0.11"
-    },
-    "browserslist": [
-        "defaults"
-    ],
-    "config": {
-        "custom": {
-            "development_mode": {
-                "type": "boolean",
-                "default": false
-            }
-        },
-        "image_sizes": {
-            "xxs": {
-                "width": 30
-            },
-            "xs": {
-                "width": 100
-            },
-            "s": {
-                "width": 300
-            },
-            "m": {
-                "width": 600
-            },
-            "l": {
-                "width": 1200
-            },
-            "xl": {
-                "width": 2000
-            }
-        },
-        "posts_per_page": 15
-    },
-    "type": "module"
+    "posts_per_page": 15
+  },
+  "type": "module"
 }
