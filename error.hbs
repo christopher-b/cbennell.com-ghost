@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{#unless @custom.development_mode}}
-        {{> "vite-assets/head"}}
+        {{> "vite_assets/head"}}
     {{/unless}}
 
     <title>{{meta_title}}</title>
@@ -56,7 +56,7 @@
         <script type="module">import "http://localhost:3000/@vite/client";</script>
         <script type="module" src="http://localhost:3000/assets/js/index.js"></script>
     {{else}}
-        {{> "vite-assets/foot"}}
+        {{> "vite_assets/foot"}}
     {{/if}}
 
     {{ghost_foot}}

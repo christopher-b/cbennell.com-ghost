@@ -8,6 +8,8 @@
       <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
       <span>&bull;</span>
       {{reading_time}}
+      <span>&bull;</span>
+      Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
     </p>
 
     <div class="my-3">
@@ -70,10 +72,6 @@
   </div>
 
   <footer class="my-6">
-      <div>
-          Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
-      </div>
-
       {{#if comments}}
       <section class="my-6">
           {{comments}}
@@ -94,7 +92,7 @@
       </a>
     {{/next_post}}
   </div>
-  <div class="flex-1">
+  <div class="flex-1 text-right">
     {{#prev_post}}
       <a href="{{url}}" class="inline-flex items-center">
         <h4>{{title}}</h4>
