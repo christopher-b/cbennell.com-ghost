@@ -1,0 +1,7 @@
+@import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+@import "./prism/theme-nord.css";
+
+/* Fix prism line-number spacing */
+.prose pre code {
+  font-size: inherit;
+}
