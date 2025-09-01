@@ -1,24 +1,8 @@
-// JavaScript files are compiled and minified during the build process to the assets/built folder. See available scripts in the package.json file.
-
-// Import CSS
 import "../css/index.css";
-
-// Import JS
-import menuOpen from "./menuOpen";
-import infiniteScroll from "./infiniteScroll";
-
-
-// Call the menu and infinite scroll functions
-menuOpen();
-infiniteScroll();
-
-// import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
-// import 'prismjs';
-
-console.log('Theme JS loaded!');
+import "prismjs";
 
 if (import.meta.hot) {
   import.meta.hot.accept(() => {
-    console.log('HMR: JS updated');
+    console.log("HMR: JS updated");
   });
 }
