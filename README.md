@@ -1,57 +1,26 @@
-# Wraith: A Ghost theme using Vite & TailswindCSS
+# Wraith: A Ghost theme using Vite & TailwindCSS
 
-This theme is intended as a starting point for Ghost themes powered by Vite and TailwindCSS, and any other modern JS goodness you want to bring. The visual design is intentionally bare bones, but it is intended to be fully-featured out of the box. It also solves some problems around compatibility between Vite and Ghost.
-
-It also includes Prism as a Vite module, so you can easily customize your code highlights.
+This theme is intended as a starting point for Ghost themes powered by Vite and TailwindCSS, and any other modern JS goodness you want to bring. The visual design is intentionally bare bones, but it is intended to be fully-featured out of the box.
 
 This theme is based on the [Ghost Starter theme](https://github.com/TryGhost/Starter), and was inspired by [biswajit-saha/vite-ghost-theme](https://github.com/biswajit-saha/vite-ghost-theme).
 
-## How to Use This Theme
-
-Develoment mode theme setting.
-
 ## Theme Features
 
-Production / development assets
+There are a few problems we need to solve when using Vite with Ghost:
 
-## Todo
+- We can't use the Vite server in development, so we need to provide the Vite assets in development and the built assets in production. We solve this by providing a `development_mode` custom theme setting. We turn it on in our development environment and leave defaulted to off in production.
+- We want to include built assets with cache-busting fingerprinted filenames in our production deployments. This means we can't hard-code built asset filenames in our templates. We solve this with a Vite plugin that reads the Vite [asset manifest](https://vite.dev/config/build-options.html#build-manifest) and outputs dynamically-generated Handlbars templates that include the assets listed in the manifest.We can include these templates in our layouts, using the `development_mode` setting to ensure they're only loaded in production.
 
- - [] Asses vite proxy server config
+This theme also offers:
 
+- TailwindCSS working out of the box, with examples for custom theme colors, spacing tokens, etc.
+- Support for font overrides in the theme setting UI, with fallback options from [modernfontstacks.com](https:////modernfontstacks.com).
+- [TailwindTypography](https://github.com/tailwindlabs/tailwindcss-typography), which includes customizable styles for CMS content via the `prose` utilities.
+- Support for code highlighting with [Prism](https://prismjs.com/), including customizable languages, themes and plugins. Only JavaScript is enabled by default, but other languages can be added in vite.config.js. Use one of the default themes by specifiying in `vite.config.js`, or add an additional theme from [PrismJS/prism-themes](https://github.com/PrismJS/prism-themes).
+- Hot module replacement via Vite, and autoreload for Handlebar templates files.
+- [GH Deploy Action](.github/workflows/deploy-theme.yml) included by default. [Learn more how to deploy your theme automatically](https://github.com/TryGhost/action-deploy-theme)
 
-## Starter theme features
-
-🔁&nbsp;Livereload by default. See changes instantly in the browser whenever you save a file.
-
-🔎&nbsp;Optimized for VS Code. Find the files you're looking for more easily.
-
-🗃️&nbsp;Write modern JavaScript. Use ESM out of the box to write more manageable Javascript.
-
-🗜️&nbsp;Assets optimized automatically. JavaScript and CSS are minified and transpiled by default.
-
-👟&nbsp;Fast compile times, powered by [Rollup](https://rollupjs.org).
-
-🦋&nbsp;Write next-gen CSS for today's browsers with [PostCSS](https://postcss.org/). Add the CSS tools you love via [`rollup.config.js`](rollup.config.js).
-
-🚢&nbsp;Ghost's [GH Deploy Action](.github/workflows/deploy-theme.yml) included by default. [Learn more how to deploy your theme automatically](https://github.com/TryGhost/action-deploy-theme)
-
-➕&nbsp;Extensible by design. Rollup's configuration structure makes it easy to add [any number of plugins easily](https://github.com/rollup/plugins).
-
-&nbsp;
-
-## Theme structure
-
-The main files are:
-
-- [`default.hbs`](default.hbs) - The main template file
-- [`index.hbs`](index.hbs) - Used for the home page
-- [`post.hbs`](post.hbs) - Used for individual posts
-- [`page.hbs`](page.hbs) - Used for individual pages
-- [`tag.hbs`](tag.hbs) - Used for tag archives
-- [`author.hbs`](author.hbs) - Used for author archives
-
-
-## Development guide
+## How to Use This Theme
 
 ### Start development mode
 
@@ -61,33 +30,33 @@ From the Starter theme folder, start development mode:
 yarn dev
 ```
 
-Changes you make to your styles, scripts, and Handlebars files will show up automatically in the browser. CSS and Javascript will be compiled and output to the `built` folder.
-
-Press `ctrl + c` in the terminal to exit development mode.
-
-&nbsp;
-
 ### Build, zip, and test your theme
 
 Compile your CSS and JavaScript assets for production with the following command:
 
 ```bash
-npm run build
+yarn build
 ```
 
 Create a zip archive:
 
 ```bash
-npm run zip
+yarn zip
 ```
 
 Use `gscan` to test your theme for compatibility with Ghost:
 
 ```bash
-npm run test
+yarn test
 ```
 
+Changes you make to your styles, scripts, and Handlebars files will show up automatically in the browser. CSS and Javascript will be compiled and output to the `built` folder.
 
+Press `ctrl + c` in the terminal to exit development mode.
+
+## Todo
+
+- [] Asses vite proxy server config
 
 ## Copyright & License
 

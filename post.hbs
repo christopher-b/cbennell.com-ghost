@@ -67,17 +67,18 @@
     {{/if}}
   </header>
 
-  <div class="prose">
+  {{! The "prose" class provides default formatting for CMS content: https://github.com/tailwindlabs/tailwindcss-typography}}
+  {{! line-numbers add line numbers to code blocks, via the Prism plugin}}
+  <div class="prose line-numbers">
     {{content}}
   </div>
 
   <footer class="my-6">
-      {{#if comments}}
-      <section class="my-6">
-          {{comments}}
-      </section>
-      {{/if}}
-
+    {{#if comments}}
+    <section class="my-6">
+      {{comments}}
+    </section>
+    {{/if}}
   </footer>
 </article>
 

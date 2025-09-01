@@ -1,64 +1,56 @@
 <!DOCTYPE html>
 <html lang="{{@site.locale}}">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{#unless @custom.development_mode}}
-        {{> "vite_assets/head"}}
-    {{/unless}}
+  {{#unless @custom.development_mode}}
+    {{> "vite_assets/head"}}
+  {{/unless}}
 
-    <title>{{meta_title}}</title>
+  <title>{{meta_title}}</title>
 
-    {{ghost_head}}
+  {{ghost_head}}
 </head>
 <body class="{{body_class}}">
-    <div class="flex flex-col min-h-screen bg-white">
-        {{> "components/header"}}
+  <div class="flex flex-col min-h-screen bg-white">
+    {{> "components/header"}}
 
-        <main class="flex flex-col grow shrink-0 basis-auto">
-            <section class="gh-page gh-error">
-                <div class="gh-container">
-                    <section class="gh-error-content">
+    <main class="flex flex-col grow shrink-0 basis-auto px-12 w-3xl">
+      <h2 class="text-xl">{{statusCode}}</h2>
+      <p class="my-3">{{message}}</p>
+      <p><a href="{{@site.url}}">Go to the front page →</a></p>
 
-                        <h1 class="gh-error-code">{{statusCode}}</h1>
-                        <p class="gh-error-description">{{message}}</p>
-                        <p class="gh-error-link"><a href="{{@site.url}}">Go to the front page →</a></p>
+      {{#if errorDetails}}
+      <section>
+        <h3 class="text-lg">Theme errors:</h3>
+        <ul>
+          {{#foreach errorDetails}}
+          <li>
+            <h4 class="gh-error-stack-function">{{{rule}}}</h4>
 
-                        {{#if errorDetails}}
-                        <section class="gh-error-stack">
-                            <h4>Theme errors:</h4>
-                            <ul class="gh-error-stack-list">
-                                {{#foreach errorDetails}}
-                                <li>
-                                    <h5 class="gh-error-stack-function">{{{rule}}}</h5>
+            {{#foreach failures}}
+              <span><strong>Ref:</strong> {{ref}}</span><br>
+              <span><strong>Message:</strong> {{message}}</span>
+            {{/foreach}}
+          </li>
+          {{/foreach}}
+        </ul>
+      </section>
+      {{/if}}
+    </main>
 
-                                    {{#foreach failures}}
-                                    <span class="gh-error-stack-file"><strong>Ref:</strong> {{ref}}</span><br>
-                                    <span class="gh-error-stack-file"><strong>Message:</strong> {{message}}</span>
-                                    {{/foreach}}
-                                </li>
-                                {{/foreach}}
-                            </ul>
-                        </section>
-                        {{/if}}
+    {{> "components/footer"}}
+  </div>
 
-                    </section>
-                </div>
-            </section>
-        </main>
+  {{#if @custom.development_mode}}
+    {{! In dev, Vite injects CSS/JS via HMR }}
+    <script type="module">import "http://localhost:5173/@vite/client";</script>
+    <script type="module" src="http://localhost:5173/assets/js/index.js"></script>
+  {{else}}
+    {{> "vite_assets/foot"}}
+  {{/if}}
 
-        {{> "components/footer"}}
-    </div>
-
-    {{#if @custom.development_mode}}
-        {{! In dev, Vite injects CSS/JS via HMR }}
-        <script type="module">import "http://localhost:3000/@vite/client";</script>
-        <script type="module" src="http://localhost:3000/assets/js/index.js"></script>
-    {{else}}
-        {{> "vite_assets/foot"}}
-    {{/if}}
-
-    {{ghost_foot}}
+  {{ghost_foot}}
 </body>
 </html>
