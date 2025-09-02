@@ -1,22 +1,7 @@
 @import "./tailwind.css";
 @import "./prism.css";
-/* @import "./ghost/content.css"; */
-@import "./ghost/members.css";
+@import "./content.css";
+@import "./fonts.css";
 
-/* Fonts */
-/* Allow font overrides in the theme UI, otherwise use families defined in the Tailwind theme */
-/* -------------- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family:
-    var(--gh-font-heading, var(--font-geohumanist)), var(--font-sans),
-    sans-serif;
-}
-body {
-  font-family:
-    var(--gh-font-body, var(--font-geohumanist)), var(--font-sans), sans-serif;
-}
+/* Cusomtize members forms */
+/* @import "./ghost/members.css"; */

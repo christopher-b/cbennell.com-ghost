@@ -5,7 +5,7 @@
 /* https://tailwindcss.com/docs/theme */
 @theme {
   /* Colors
-    /* ---------------------------------------------------------- */
+  /* ---------------------------------------------------------- */
   --color-grenadier-50: #fff6ed;
   --color-grenadier-100: #ffead4;
   --color-grenadier-200: #ffd2a8;
@@ -19,7 +19,7 @@
   --color-grenadier-950: #440f06;
 
   /* Fonts
-    /* These are taken from https://modernfontstacks.com */
+  /* These are taken from https://modernfontstacks.com */
   /* ---------------------------------------------------------- */
   --font-antique:
     Superclarendon, "Bookman Old Style", "URW Bookman", "URW Bookman L",
