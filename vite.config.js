@@ -20,29 +20,9 @@ export default defineConfig({
     },
   },
   // server: {
-  // port: 3000,
-  // proxy: {
-  //   "/": {
-  //     target: "http://localhost:2368",
-  //     changeOrigin: true,
-  //     bypass: (req) => {
-  //       // Serve Vite client and local assets directly — do NOT proxy
-  //       if (
-  //         req.url.startsWith("/@vite/client") || // Vite HMR client
-  //         req.url.startsWith("/assets") || // local assets
-  //         req.url.startsWith("/src") || // source files (optional)
-  //         req.url.startsWith("/node_modules") // node modules (optional)
-  //       ) {
-  //         return req.url; // serve locally from Vite server
-  //       }
-  //       // Proxy everything else to Ghost backend
-  //       return null;
-  //     },
+  //   cors: {
+  //     origin: "http://localhost:2368",
   //   },
-  // },
-  // watch: {
-  //   ignored: ["**/node_modules/**", "**/build/**"],
-  // },
   // },
   plugins: [
     reloadHbs(),
