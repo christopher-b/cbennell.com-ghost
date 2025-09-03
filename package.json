@@ -2,7 +2,7 @@
   "name": "wraith-ghost-theme",
   "description": "A Ghost theme using Vite & TailwindCSS",
   "demo": "https://wraith-demo.cbennell.com",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "ghost": ">=5.0.0"
   },
@@ -57,7 +57,8 @@
     "custom": {
       "development_mode": {
         "type": "boolean",
-        "default": false
+        "default": false,
+        "description": "Theme development mode. Leave off in production."
       }
     },
     "image_sizes": {
