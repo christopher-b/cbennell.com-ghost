@@ -13,6 +13,8 @@ There are a few problems we need to solve when using Vite with Ghost:
 
 This setup provides hot module replacement and automatic reloads (even on changes to your Handlebars files)
 
+A note about cache busting: Ghost handles assert version automatically using the `{{asset}}` helper, so we don't _need_ to use Vite's fingerprinted filenames; we could just output static assets and skip the whole manifest-scanning-partial-generation thing. But I like the flexibility it grants: we can load whatever Vite outputs without modifying our templates manually.
+
 ### TailwindCSS
 
 TailwindCSS is supported out of the box. Sample Tailwind theme tokens are inluded in `assets/css/tailwind.css`. Support for font-families from [modernfontstacks.com](https://modernfontstacks.com) is included, as are font overrides in the Ghost Theme UI (see `assets/css/fonts.css`).
