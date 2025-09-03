@@ -46,7 +46,7 @@
   {{#if @custom.development_mode}}
     {{! In dev, Vite injects CSS/JS via HMR }}
     <script type="module">import "http://localhost:5173/@vite/client";</script>
-    <script type="module" src="http://localhost:5173/assets/js/index.js"></script>
+    <script type="module" src="http://localhost:5173{{asset "js/index.js"}}"></script>
   {{else}}
     {{> "vite_assets/foot"}}
   {{/if}}
