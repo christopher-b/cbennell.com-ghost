@@ -39,6 +39,8 @@ From the theme folder, start development mode:
 yarn dev
 ```
 
+Open the Ghost admin dashboard on your development server. Open settings and navigate to Design & Branding > Customize > Theme, and enable the "Development mode" setting.
+
 Changes you make to your styles, scripts, and Handlebars files will show up automatically in the browser. CSS and Javascript will be compiled and output to the `built` folder.
 
 Press `ctrl + c` in the terminal to exit development mode.
