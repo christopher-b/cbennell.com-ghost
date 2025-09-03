@@ -99,6 +99,14 @@
     text-align: center;
   }
 
+  /* Media Embeds. See https://docs.ghost.org/themes/content for details */
+  .kg-audio-card {
+  }
+  .kg-file-card {
+  }
+  .kg-video-card {
+  }
+
   /* Gallery Card */
   .kg-gallery-card {
   }
@@ -217,6 +225,12 @@
   .kg-button-card {
   }
   .kg-btn {
+  }
+
+  /* Block Quote */
+  blockquote {
+  }
+  .kg-blockquote-alt {
   }
 
   /* Separator */

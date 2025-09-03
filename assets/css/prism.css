@@ -3,5 +3,6 @@
 
 /* Fix prism line-number spacing */
 .prose pre code {
+  text-shadow: none;
   font-size: inherit;
 }
