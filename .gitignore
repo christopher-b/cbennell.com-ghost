@@ -21,7 +21,6 @@ projectFilesBackup
 
 .DS_Store
 
-dist/
 assets/built
 partials/vite_assets/head.hbs
 partials/vite_assets/foot.hbs
