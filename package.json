@@ -1,15 +1,12 @@
 {
-  "name": "wraith-ghost-theme",
+  "name": "sidelight-ghost-theme",
   "description": "A Ghost theme using Vite & TailwindCSS",
-  "demo": "https://wraith-demo.cbennell.com",
-  "version": "0.0.2",
+  "demo": "https://sidelight.cbennell.com",
+  "version": "0.1.0",
   "engines": {
     "ghost": ">=5.0.0"
   },
   "license": "MIT",
-  "screenshots": {
-    "desktop": "assets/screenshot-desktop.jpg"
-  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -36,10 +33,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/christopher-b/wraith.git"
+    "url": "https://github.com/christopher-b/sidelight.git"
   },
-  "bugs": "https://github.com/christopher-b/wraith/issues",
-  "contributors": "https://github.com/christopher-b/wraith/graphs/contributors",
+  "bugs": "https://github.com/christopher-b/sidelight/issues",
+  "contributors": "https://github.com/christopher-b/sidelight/graphs/contributors",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.12",
