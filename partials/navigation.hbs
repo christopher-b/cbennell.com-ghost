@@ -1,19 +1,25 @@
 {{#if isSecondary}}
   {{! A secondary menu can be templated here}}
-  <ul class="inline-flex flex-wrap items-center list-none">
+  <ul>
     {{#foreach navigation}}
-      <li class="mr-6 {{concat "nav-" slug}}">
-        <a href="{{url absolute="true"}}" class="{{link_class for=(url) activeClass="underline"}}">
+      <li class="mr-6 {{concat 'nav-' slug}}">
+        <a
+          href="{{url absolute="true"}}"
+          class="{{link_class for=(url) activeClass="underline"}}"
+        >
           {{label}}
         </a>
       </li>
     {{/foreach}}
   </ul>
 {{else}}
-  <ul class="inline-flex flex-wrap items-center list-none">
+  <ul>
     {{#foreach navigation}}
-      <li class="mr-6 {{concat "nav-" slug}}">
-        <a href="{{url absolute="true"}}" class="{{link_class for=(url) activeClass="underline"}}">
+      <li class="mb-1 {{concat 'nav-' slug}}">
+        <a
+          href="{{url absolute="true"}}"
+          class="{{link_class for=(url) activeClass="underline"}}"
+        >
           {{label}}
         </a>
       </li>

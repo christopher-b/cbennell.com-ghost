@@ -1,0 +1,88 @@
+<header>
+  <!-- Close button for mobile -->
+  {{!--
+  <div class="md:hidden mt-3 mr-3 text-right">
+    <button id="close-nav-btn" class="p-2 rounded-md hover:bg-gray-100">
+      {{> "icons/close"}}
+    </button>
+  </div>
+
+  <!-- Mobile menu button -->
+  <button
+    id="mobile-menu-btn"
+    class="md:hidden p-2 rounded-md transition-colors cursor-pointer"
+  >
+    {{> "icons/hamburger" }}
+  </button>
+  --}}
+
+  <a class="flex gap-4" href="{{@site.url}}">
+    {{#if @site.logo}}
+      <img class="rounded-full border-accent-med border-1 w-20" src="{{@site.logo}}" alt="{{@site.title}}" />
+    {{/if}}
+
+    <h1 class="text-4xl font-display font-medium">{{@site.title}}</h1>
+  </a>
+
+  <p class="my-8 text-lg font-light">{{@site.description}}</p>
+</header>
+
+<nav class="text-center md:text-left font-display font-light text-xl">
+  {{navigation}}
+
+  <ul>
+    <li>
+      {{#if @site.members_enabled}}
+        {{^if @member}}
+          <a class="" href="{{@site.signup_url}}">Subscribe</a>
+        {{else}}
+          <a class="" href="#/portal/account">Account</a>
+        {{/if}}
+      {{/if}}
+    </li>
+    <li>
+      <ul class="flex gap-2">
+        <li>
+          <search>
+            {{!search}}
+            <button class="cursor-pointer" data-ghost-search>
+              {{> "icons/search"}}
+            </button>
+          </search>
+        </li>
+        <!-- <li> -->
+        <!--   <a href="https://github.com/christopher-b/" rel="noopener nofollow" target="_blank"> -->
+        <!--     {{> "icons/github"}} -->
+        <!--   </a> -->
+        <!-- </li> -->
+        <!-- <li> -->
+        <!--   <a href="https://www.linkedin.com/in/christopher-bennell/" rel="noopener nofollow" target="_blank"> -->
+        <!--     {{> "icons/linkedin"}} -->
+        <!--   </a> -->
+        <!-- </li> -->
+        <!-- <li> -->
+        <!--   <a href="https://bsky.app/profile/cbennell.com" rel="noopener nofollow" target="_blank"> -->
+        <!--     {{> "icons/bsky"}} -->
+        <!--   </a> -->
+        <!-- </li> -->
+        <!-- <li> -->
+        <!--   <a href="mailto:cbennell@hey.com" rel="noopener nofollow"> -->
+        <!--     {{> "icons/email"}} -->
+        <!--   </a> -->
+        <!-- </li> -->
+        <!-- <li> -->
+        <!--   <a href="{{asset "files/christopher_bennell_resume.pdf"}}" rel="noopener nofollow" target="_blank"> -->
+        <!--     {{> "icons/file"}} -->
+        <!--   </a> -->
+        <!-- </li> -->
+        <!-- <li> -->
+        <!--   <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener"> -->
+        <!--     <span> -->
+        <!--       {{> "icons/rss"}} -->
+        <!--     </span> -->
+        <!--   </a> -->
+        <!-- </li> -->
+      </ul>
+    </li>
+   </ul>
+</nav>

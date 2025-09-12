@@ -1,7 +1,7 @@
-<article class="{{post_class}} mb-12">
-  <a href="{{url}}">
+<article class="{{post_class}} mb-4 border-1 border-neutral-med rounded-3xl overflow-hidden">
+  <a href="{{url}}" class="flex h-48">
     {{#if feature_image}}
-      <picture>
+      <picture class="w-60 flex-shrink-0">
         <source
           srcset="
           {{img_url feature_image size="xxs" format="avif"}} 30w,
@@ -31,6 +31,7 @@
           {{^if @first}}loading="lazy"{{/if}}
         >
         <img
+        class="w-full h-full object-cover"
           srcset="
           {{img_url feature_image size="xxs"}} 30w,
           {{img_url feature_image size="xs"}} 100w,
@@ -47,17 +48,29 @@
         >
       </picture>
     {{/if}}
-    <div>
-      <p class="text-sm italic py-3">
-        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-        <span>&bull;</span>
-        {{reading_time}}
-        <span>&bull;</span>
-        <span>By {{#foreach authors}}{{#if @first}}{{name}}{{else}}, {{name}}{{/if}}{{/foreach}}</span>
-      </p>
-      <h2 class="text-xl pb-3">{{title}}</h2>
-      <p>{{excerpt}}</p>
-      <strong>Read more</strong>
+    <div class="flex-1 m-3 flex flex-col justify-between">
+      <div>
+        <h2 class="text-2xl font-medium line-clamp-1">{{title}}</h2>
+        <p class="line-clamp-3">
+         {{excerpt}}
+        </p>
+      </div>
+      <div>
+        <p class="text-sm italic">
+          <time datetime="{{date format="YYYY-MM-DD"}}">{{date
+              format="D MMM YYYY"
+            }}</time>
+          <span>&bull;</span>
+          {{reading_time}}
+          {{!--
+          <span>&bull;</span>
+          <span>By
+            {{#foreach authors}}{{#if @first}}{{name}}{{else}},
+                {{name}}{{/if}}{{/foreach}}</span>
+          --}}
+        </p>
+        <strong>Read more</strong>
+      </div>
     </div>
   </a>
 </article>

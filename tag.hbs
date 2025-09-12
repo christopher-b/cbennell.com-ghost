@@ -1,27 +1,23 @@
 {{!< default}}
 
-<div class="px-12 mb-6 w-3xl">
-  <div>
-    {{#tag}}
-      <header>
-        <h2 class="text-4xl">{{name}}</h2>
+{{#tag}}
+  <header>
+    <h2 class="text-6xl">Posts tagged &ldquo;{{name}}&rdquo;</h2>
 
-        {{#if feature_image}}
-          <img class="my-3" src="{{feature_image}}" alt="{{name}}" />
-        {{/if}}
+    {{#if feature_image}}
+      <img class="my-3" src="{{feature_image}}" alt="{{name}}" />
+    {{/if}}
 
-        <p class="my-3">
-          {{#if description}}
-            {{description}}
-          {{else}}
-            A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
-          {{/if}}
-        </p>
-      </header>
-    {{/tag}}
+    <p class="my-3 text-lg">
+      {{#if description}}
+        {{description}}
+      {{else}}
+        {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+      {{/if}}
+    </p>
+  </header>
+{{/tag}}
 
-    {{#foreach posts}}
-      {{> "components/card"}}
-    {{/foreach}}
-  </div>
-</div>
+{{#foreach posts}}
+  {{> "components/card"}}
+{{/foreach}}

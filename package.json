@@ -1,8 +1,7 @@
 {
-  "name": "sidelight-ghost-theme",
-  "description": "A Ghost theme using Vite & TailwindCSS",
-  "demo": "https://sidelight.cbennell.com",
-  "version": "0.1.0",
+  "name": "cbennell-theme",
+  "description": "A Ghost theme for cbennell.com",
+  "version": "0.1.1",
   "engines": {
     "ghost": ">=5.0.0"
   },
@@ -22,8 +21,7 @@
   "gpm": {
     "type": "theme",
     "categories": [
-      "Minimal",
-      "Magazine"
+      "Minimal"
     ]
   },
   "keywords": [
@@ -44,7 +42,7 @@
     "prismjs": "^1.30.0",
     "tailwindcss": "^4.1.12",
     "vite": "^7.1.3",
-    "vite-plugin-prismjs": "^0.0.11"
+    "vite-plugin-restart": "^1.0.0"
   },
   "browserslist": [
     "defaults"

@@ -1,26 +1,38 @@
 {{!< default}}
 
 {{#post}}
-
-<article class="{{post_class}} px-12 w-3xl">
+<article class="{{post_class}}">
   <header>
-    <p class="italic my-3">
-      <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-      <span>&bull;</span>
-      {{reading_time}}
-      <span>&bull;</span>
-      Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
-    </p>
+    <h2 class="text-6xl font-bold mb-6">{{title}}</h1>
 
-    <div class="my-3">
-      {{tags separator=" • "}}
+    <div class="flex my-6">
+      <p class="italic">
+        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+        <span>&bull;</span>
+        {{reading_time}}
+        <!-- <span>&bull;</span> -->
+        <!-- Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}} -->
+      </p>
+
+      {{! tags separator=" • "}}
+      {{#if tags}}
+        <span class="mx-1">&bull;</span>
+        <ul class="flex gap-3">
+        {{#foreach tags}}
+          <li>
+            <a class="underline decoration-dotted decoration-accent-med text-accent-med"
+              href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
+          </li>
+        {{/foreach}}
+        </ul>
+      {{/if}}
     </div>
 
-    <h2 class="text-4xl mb-3">{{title}}</h1>
-
+    {{!--
     {{#if custom_excerpt}}
       <p class="my-6">{{custom_excerpt}}</p>
     {{/if}}
+    --}}
 
     {{#if feature_image}}
     <figure class="my-6">
@@ -48,6 +60,7 @@
           type="image/webp"
         >
         <img
+          class="w-full"
           srcset="
           {{img_url feature_image size="xxs"}} 30w,
           {{img_url feature_image size="xs"}} 100w,
@@ -67,9 +80,7 @@
     {{/if}}
   </header>
 
-  {{! The "prose" class provides default formatting for CMS content: https://github.com/tailwindlabs/tailwindcss-typography}}
-  {{! line-numbers add line numbers to code blocks, via the Prism plugin}}
-  <div class="content prose prose-img:m-0 line-numbers">
+  <div class="content max-w-full text-lg prose prose-img:m-0 w-full line-numbers">
     {{content}}
   </div>
 

@@ -117,6 +117,26 @@
   .kg-gallery-image {
   }
 
+  .kg-code-card {
+  }
+  .kg-code-card pre {
+    border-radius: 0.375rem 0.375rem 0 0;
+  }
+  .kg-code-card figcaption {
+    font-size: 0.8rem;
+    font-family: var(--font-display);
+    margin-top: 0;
+    background-color: #2e3440;
+    color: var(--color-neutral-med);
+    border-radius: 0 0 0.375rem 0.375rem;
+    text-align: start;
+    padding-left: 1em;
+    padding-bottom: 0.5em;
+  }
+  .kg-code-card figcaption p {
+    margin: 0;
+  }
+
   /* Call to Action Card */
   .kg-cta-card {
   }

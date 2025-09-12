@@ -6,17 +6,15 @@
 @theme {
   /* Colors
   /* ---------------------------------------------------------- */
-  --color-grenadier-50: #fff6ed;
-  --color-grenadier-100: #ffead4;
-  --color-grenadier-200: #ffd2a8;
-  --color-grenadier-300: #ffb271;
-  --color-grenadier-400: #ff8638;
-  --color-grenadier-500: #fe6411;
-  --color-grenadier-600: #ef4907;
-  --color-grenadier-700: #d83909;
-  --color-grenadier-800: #9d2b0f;
-  --color-grenadier-900: #7e2510;
-  --color-grenadier-950: #440f06;
+  --color-neutral-light: var(--color-stone-50);
+  --color-neutral-med: var(--color-stone-300);
+  --color-neutral-dark: var(--color-zinc-800);
+  /* --color-accent-light: var(--color-stone-100); */
+  /* --color-accent-med: var(--color-stone-500); */
+  /* --color-accent-dark: #204534; */
+  --color-accent-light: #f1f8f4;
+  --color-accent-med: #2f6c4e;
+  --color-accent-dark: #204534;
 
   /* Fonts
   /* These are taken from https://modernfontstacks.com */
@@ -64,4 +62,21 @@
     /* ---------------------------------------------------------- */
   /* --spacing-vmin-sm: 1.5vmin !important; */
   /* --spacing-vmin3: 3vmin; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* color: var(--color-amazon-med); */
+}
+@layer components {
+  /* a { */
+  /*   color: var(--color-blue-500); */
+  /*   &:hover { */
+  /*     color: var(--color-blue-800); */
+  /*   } */
+  /* } */
 }
