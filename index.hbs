@@ -1,13 +1,13 @@
 {{!< default}}
-<div>
+<div class="flex flex-col gap-10">
   {{#foreach posts}}
-    {{> "components/card" page=../pagination.page }} {{!-- partials/card.hbs --}}
+  {{> "components/card" page=../pagination.page }} {{!-- partials/card.hbs --}}
   {{/foreach}}
-
-  {{!-- If JS isn't enabled, fallback to standard pagination --}}
-  <noscript>
-    <div>
-      {{pagination}}
-    </div>
-  </noscript>
 </div>
+
+{{!-- If JS isn't enabled, fallback to standard pagination --}}
+<noscript>
+  <div>
+    {{ pagination }}
+  </div>
+</noscript>

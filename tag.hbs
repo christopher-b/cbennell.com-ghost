@@ -1,23 +1,25 @@
 {{!< default}}
 
 {{#tag}}
-  <header>
-    <h2 class="text-6xl">Posts tagged &ldquo;{{name}}&rdquo;</h2>
+<header>
+  <h2 class="text-6xl">Posts tagged &ldquo;{{ name }}&rdquo;</h2>
 
-    {{#if feature_image}}
-      <img class="my-3" src="{{feature_image}}" alt="{{name}}" />
+  {{#if feature_image}}
+  <img class="my-3" src="{{ feature_image }}" alt="{{ name }}" />
+  {{/if}}
+
+  <p class="my-3 text-lg">
+    {{#if description}}
+    {{ description }}
+    {{else}}
+    {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
     {{/if}}
-
-    <p class="my-3 text-lg">
-      {{#if description}}
-        {{description}}
-      {{else}}
-        {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
-      {{/if}}
-    </p>
-  </header>
+  </p>
+</header>
 {{/tag}}
 
-{{#foreach posts}}
+<div class="flex flex-col gap-10">
+  {{#foreach posts}}
   {{> "components/card"}}
-{{/foreach}}
+  {{/foreach}}
+</div>

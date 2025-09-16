@@ -1,40 +1,65 @@
 <!DOCTYPE html>
 <html lang="{{@site.locale}}">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  {{#unless @custom.development_mode}}
+    {{#unless @custom.development_mode}}
     {{> "vite_assets/head"}}
-  {{/unless}}
+    {{/unless}}
 
-  <title>{{meta_title}}</title>
+    <title>{{ meta_title }}</title>
 
-  {{ghost_head}}
-</head>
-<body class="{{body_class}} font-body min-h-screen flex flex-col bg-neutral-light text-neutral-cdark">
-  <div class="flex py-16">
-    <div id="sidebar" class="w-108 border-r border-neutral-med px-16 ">
-      {{> "components/sidebar"}}
+    {{
+      ghost_head
+    }}
+  </head>
+
+  <body
+    class="{{ body_class }} font-body min-h-screen flex flex-col bg-fixed
+    bg-[url(/assets/images/grain.svg)]
+    bg-neutral-light text-neutral-dark
+    dark:bg-[url(/assets/images/grain-light.svg)]
+    dark:bg-neutral-dark dark:text-neutral-light
+  ">
+    <div class="
+      m-16
+      flex flex-col gap-16
+      xl:flex-row
+    ">
+      <div id="sidebar" class="
+        border-neutral-med
+        dark:border-neutral-muted
+        border-b
+        pb-16
+        xl:pr-16
+        xl:pb-16
+        xl:border-r
+        xl:border-b-0
+        xl:max-w-100
+        flex-1
+      ">
+        <!-- xl:w-100 -->
+        {{> components/header}}
+        {{ navigation }}
+      </div>
+      <main class="max-w-6xl flex-3">
+        {{{ body }}}
+      </main>
     </div>
 
-    <main class="flex-1 max-w-4xl px-16">
-      {{{body}}}
-    </main>
-  </div>
+    <div class="mx-16 py-16 border-t border-neutral-med dark:border-neutral-muted">
+      {{> "components/footer"}}
+    </div>
 
-  <!-- Footer -->
-  {{> "components/footer"}}
-
-  {{#if @custom.development_mode}}
+    {{#if @custom.development_mode}}
     {{! In dev, Vite injects CSS/JS via HMR }}
     <script type="module" src="http://localhost:5173/@vite/client"></script>
-    <script type="module" src="http://localhost:5173{{asset "js/index.js"}}"></script>
-    <!-- <script type="module" src="http://localhost:5173{{asset "css/index.css"}}"></script> -->
-  {{else}}
+    <script type="module" src="http://localhost:5173{{asset 'js/index.js'}}"></script>
+    {{else}}
     {{> "vite_assets/foot"}}
-  {{/if}}
+    {{/if}}
 
-  {{ghost_foot}}
-</body>
+    {{ ghost_foot }}
+  </body>
 </html>

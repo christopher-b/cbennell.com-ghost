@@ -1,0 +1,12 @@
+{
+  "overrides": [
+    {
+      "files": "**/*.hbs",
+      "options": {
+        "parser": "angular"
+      }
+    }
+  ],
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "printWidth": 120
+}

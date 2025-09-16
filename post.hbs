@@ -3,7 +3,7 @@
 {{#post}}
 <article class="{{post_class}}">
   <header>
-    <h2 class="text-6xl font-bold mb-6">{{title}}</h1>
+    <h1 class="text-6xl font-bold mb-6">{{title}}</h1>
 
     <div class="flex my-6">
       <p class="italic">
@@ -20,7 +20,16 @@
         <ul class="flex gap-3">
         {{#foreach tags}}
           <li>
-            <a class="underline decoration-dotted decoration-accent-med text-accent-med"
+            <a class="underline decoration-dotted
+              decoration-accent-light
+              text-accent-light
+              bg-accent-med
+              px-2 pt-1 pb-1.5
+              rounded
+
+              dark:decoration-accent-light
+              dark:text-accent-light
+            "
               href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
           </li>
         {{/foreach}}
@@ -60,7 +69,7 @@
           type="image/webp"
         >
         <img
-          class="w-full"
+          class="w-full max-h-100 object-cover"
           srcset="
           {{img_url feature_image size="xxs"}} 30w,
           {{img_url feature_image size="xs"}} 100w,
@@ -80,27 +89,28 @@
     {{/if}}
   </header>
 
-  <div class="content max-w-full text-lg prose prose-img:m-0 w-full line-numbers">
+  <div class="content max-w-[75ch] text-xl prose prose-img:m-0 dark:prose-invert w-full line-numbers">
     {{content}}
   </div>
 
   <footer class="my-6">
-    {{#if comments}}
-    <section class="my-6">
+    {{#if comments mode="auto"}}
+    <section class="my-6 dark:text-neutral-light">
       {{comments}}
+
     </section>
     {{/if}}
   </footer>
 </article>
 
-<aside class="px-12 mb-6 w-3xl flex gap-4">
+<aside class="mb-6 w-3xl flex gap-4">
   <div class="flex-1">
     {{#next_post}}
       <a href="{{url}}" class="inline-flex items-center">
-        <span class="mx-3 w-2 h-2">
+        <span class="mx-3 w-2 align-text-top">
           {{> "icons/arrow-left"}}
         </span>
-        <h4>{{title}}</h4>
+        <h4 class="align-text-top">{{title}}</h4>
       </a>
     {{/next_post}}
   </div>
@@ -108,7 +118,7 @@
     {{#prev_post}}
       <a href="{{url}}" class="inline-flex items-center">
         <h4>{{title}}</h4>
-        <span class="w-2 h-2 mx-3">
+        <span class="w-2 mx-3">
           {{> "icons/arrow-right"}}
         </span>
      </a>

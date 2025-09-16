@@ -78,5 +78,9 @@
     },
     "posts_per_page": 15
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14"
+  }
 }

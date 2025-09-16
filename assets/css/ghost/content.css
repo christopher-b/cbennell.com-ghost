@@ -2,10 +2,11 @@
 
 .content {
   /* Applies to all content cards */
-  .kg-card {
-  }
+  /*----------*/
+  /* .kg-card { } */
 
   /* Layout utils. Can apply to headers, galleries, images, etc. */
+  /*----------*/
   .kg-width-wide {
     position: relative;
     width: 70vw;
@@ -21,6 +22,7 @@
   }
 
   /* Color Variants */
+  /*----------*/
   --card-bg-white: #ffffff;
   --card-bg-grey: #abb4be33;
   --card-bg-blue: #14b8ff33;
@@ -30,8 +32,7 @@
   --card-bg-pink: #fb2d8d33;
   --card-bg-purple: #8e42ff33;
 
-  .kg-cta-bg-none {
-  }
+  /* .kg-cta-bg-none { } */
   .kg-callout-bg-white,
   .kg-cta-bg-white {
     background-color: var(--card-bg-white);
@@ -66,6 +67,7 @@
   }
 
   /* Headers */
+  /*----------*/
   .kg-header-card {
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -81,44 +83,35 @@
       margin-bottom: 0;
     }
   }
-  .kg-header-card-content {
-  }
-  .kg-header-card-text {
-  }
-  .kg-header-card-heading {
-  }
+  /* .kg-header-card-content { } */
+  /* .kg-header-card-text { } */
+  /* .kg-header-card-heading { } */
 
   /* Images and Embeds */
-  .kg-image-card {
-  }
-  .kg-image {
-  }
-  .kg-embed-card {
-  }
-  figcaption {
+  /*----------*/
+  /* .kg-image-card { } */
+  /* .kg-image { } */
+  /* .kg-embed-card { } */
+  .kg-image-card figcaption {
     text-align: center;
   }
 
   /* Media Embeds. See https://docs.ghost.org/themes/content for details */
-  .kg-audio-card {
-  }
-  .kg-file-card {
-  }
-  .kg-video-card {
-  }
+  /*----------*/
+  /* .kg-audio-card { } */
+  /* .kg-file-card { } */
+  /* .kg-video-card { } */
 
   /* Gallery Card */
-  .kg-gallery-card {
-  }
-  .kg-gallery-container {
-  }
-  .kg-gallery-row {
-  }
-  .kg-gallery-image {
-  }
+  /*----------*/
+  /* .kg-gallery-card { } */
+  /* .kg-gallery-container { } */
+  /* .kg-gallery-row { } */
+  /* .kg-gallery-image { } */
 
-  .kg-code-card {
-  }
+  /* Gallery Card */
+  /*----------*/
+  /* .kg-code-card { } */
   .kg-code-card pre {
     border-radius: 0.375rem 0.375rem 0 0;
   }
@@ -138,122 +131,80 @@
   }
 
   /* Call to Action Card */
-  .kg-cta-card {
-  }
-  .kg-cta-sponsor-label-wrapper {
-  }
-  .kg-cta-sponsor-label {
-  }
-  .kg-cta-content {
-  }
-  .kg-cta-image-container {
-  }
-  .kg-cta-content-inner {
-  }
-  .kg-cta-text {
-  }
-  .kg-cta-button {
-  }
+  /*----------*/
+  /* .kg-cta-card { } */
+  /* .kg-cta-sponsor-label-wrapper { } */
+  /* .kg-cta-sponsor-label { } */
+  /* .kg-cta-content { } */
+  /* .kg-cta-image-container { } */
+  /* .kg-cta-content-inner { } */
+  /* .kg-cta-text { } */
+  /* .kg-cta-button { } */
 
   /* Callout Card */
-  .kg-callout-card {
-  }
-  .kg-callout-emoji {
-  }
-  .kg-callout-text {
-  }
+  /*----------*/
+  /* .kg-callout-card { } */
+  /* .kg-callout-emoji { } */
+  /* .kg-callout-text { } */
 
   /* Sign Up Card */
-  .kg-signup-card {
-  }
-  .kg-signup-card-content {
-  }
-  .kg-signup-card-text {
-  }
-  .kg-signup-card-heading {
-  }
-  .kg-signup-card-subheading {
-  }
-  .kg-signup-card-form {
-  }
-  .kg-signup-card-fields {
-  }
-  .kg-signup-card-input {
-  }
-  .kg-signup-card-button {
-  }
-  .kg-signup-card-button-default {
-  }
-  .kg-signup-card-button-loading {
-  }
-  .kg-signup-card-success {
-  }
-  .kg-signup-card-error {
-  }
-  .kg-signup-card-disclaimer {
-  }
+  /*----------*/
+  /* .kg-signup-card { } */
+  /* .kg-signup-card-content { } */
+  /* .kg-signup-card-text { } */
+  /* .kg-signup-card-heading { } */
+  /* .kg-signup-card-subheading { } */
+  /* .kg-signup-card-form { } */
+  /* .kg-signup-card-fields { } */
+  /* .kg-signup-card-input { } */
+  /* .kg-signup-card-button { } */
+  /* .kg-signup-card-button-default { } */
+  /* .kg-signup-card-button-loading { } */
+  /* .kg-signup-card-success { } */
+  /* .kg-signup-card-error { } */
+  /* .kg-signup-card-disclaimer { } */
 
   /* Bookmark Card */
-  .kg-bookmark-card {
-  }
-  .kg-bookmark-container {
-  }
-  .kg-bookmark-content {
-  }
-  .kg-bookmark-title {
-  }
-  .kg-bookmark-description {
-  }
-  .kg-bookmark-metadata {
-  }
-  .kg-bookmark-icon {
-  }
-  .kg-bookmark-author {
-  }
-  .kg-bookmark-publisher {
-  }
-  .kg-bookmark-thumbnail {
-  }
+  /*----------*/
+  /* .kg-bookmark-card { } */
+  /* .kg-bookmark-container { } */
+  /* .kg-bookmark-content { } */
+  /* .kg-bookmark-title { } */
+  /* .kg-bookmark-description { } */
+  /* .kg-bookmark-metadata { } */
+  /* .kg-bookmark-icon { } */
+  /* .kg-bookmark-author { } */
+  /* .kg-bookmark-publisher { } */
+  /* .kg-bookmark-thumbnail { } */
 
   /* Toggle Card */
-  .kg-toggle-card {
-  }
-  .kg-toggle-heading {
-  }
-  .kg-toggle-heading-text {
-  }
-  .kg-toggle-card-icon {
-  }
-  .kg-toggle-content {
-  }
+  /*----------*/
+  /* .kg-toggle-card { } */
+  /* .kg-toggle-heading { } */
+  /* .kg-toggle-heading-text { } */
+  /* .kg-toggle-card-icon { } */
+  /* .kg-toggle-content { } */
 
   /* Product Card */
-  .kg-product-card {
-  }
-  .kg-product-card-container {
-  }
-  .kg-product-card-image {
-  }
-  .kg-product-card-title-container {
-  }
-  .kg-product-card-title {
-  }
-  .kg-product-card-description {
-  }
+  /*----------*/
+  /* .kg-product-card { } */
+  /* .kg-product-card-container { } */
+  /* .kg-product-card-image { } */
+  /* .kg-product-card-title-container { } */
+  /* .kg-product-card-title { } */
+  /* .kg-product-card-description { } */
 
   /* Buttons */
-  .kg-button-card {
-  }
-  .kg-btn {
-  }
+  /*----------*/
+  /* .kg-button-card { } */
+  /* .kg-btn { } */
 
   /* Block Quote */
-  blockquote {
-  }
-  .kg-blockquote-alt {
-  }
+  /*----------*/
+  /* blockquote { } */
+  /* .kg-blockquote-alt { } */
 
   /* Separator */
-  hr {
-  }
+  /*----------*/
+  /* hr { } */
 }

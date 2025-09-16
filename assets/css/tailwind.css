@@ -8,70 +8,47 @@
   /* ---------------------------------------------------------- */
   --color-neutral-light: var(--color-stone-50);
   --color-neutral-med: var(--color-stone-300);
+  --color-neutral-muted: var(--color-stone-600);
   --color-neutral-dark: var(--color-zinc-800);
   /* --color-accent-light: var(--color-stone-100); */
   /* --color-accent-med: var(--color-stone-500); */
   /* --color-accent-dark: #204534; */
-  --color-accent-light: #f1f8f4;
-  --color-accent-med: #2f6c4e;
-  --color-accent-dark: #204534;
+  /* --color-accent-light: #f1f8f4; */
+  /* --color-accent-med: #2f6c4e; */
+  /* --color-accent-dark: #204534; */
+  --color-accent-light: #abf0c5;
+  /* --color-accent-light: #51725e; */
+  --color-accent-med: #395042;
+  --color-accent-dark: #222f27;
 
   /* Fonts
   /* These are taken from https://modernfontstacks.com */
   /* ---------------------------------------------------------- */
-  --font-antique:
-    Superclarendon, "Bookman Old Style", "URW Bookman", "URW Bookman L",
-    "Georgia Pro", Georgia, serif;
-  --font-classical-humanist:
-    Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
-  --font-didone:
-    Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L", P052, Sylfaen,
-    serif;
-  --font-geohumanist:
-    "Avenir", "Montserrat", "Corbel", "URW Gothic", "source-sans-pro",
-    "sans-serif";
-  --font-handwritten:
-    "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual, cursive;
-  --font-humanist:
-    Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro,
-    sans-serif;
+  --font-antique: Superclarendon, "Bookman Old Style", "URW Bookman", "URW Bookman L", "Georgia Pro", Georgia, serif;
+  --font-classical-humanist: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
+  --font-didone: Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L", P052, Sylfaen, serif;
+  --font-geohumanist: "Avenir", "Montserrat", "Corbel", "URW Gothic", "source-sans-pro", "sans-serif";
+  --font-handwritten: "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual, cursive;
+  --font-humanist: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro, sans-serif;
   --font-industrial:
-    Bahnschrift, "DIN Alternate", "Franklin Gothic Medium",
-    "Nimbus Sans Narrow", sans-serif-condensed, sans-serif;
-  --font-mono-code:
-    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
-    "DejaVu Sans Mono", monospace;
+    Bahnschrift, "DIN Alternate", "Franklin Gothic Medium", "Nimbus Sans Narrow", sans-serif-condensed, sans-serif;
+  --font-mono-code: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
   --font-mono-slab: "Nimbus Mono PS", "Courier New", monospace;
-  --font-neogrotesque:
-    Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
-    sans-serif;
-  --font-old-style:
-    "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052, serif;
+  --font-neogrotesque: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+  --font-old-style: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052, serif;
   --font-rounded-sans:
-    ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa, Manjari,
-    "Arial Rounded MT", "Arial Rounded MT Bold", Calibri, source-sans-pro,
-    sans-serif;
-  --font-slab-serif:
-    Rockwell, "Rockwell Nova", "Roboto Slab", "DejaVu Serif", "Sitka Small",
-    serif;
+    ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa, Manjari, "Arial Rounded MT", "Arial Rounded MT Bold",
+    Calibri, source-sans-pro, sans-serif;
+  --font-slab-serif: Rockwell, "Rockwell Nova", "Roboto Slab", "DejaVu Serif", "Sitka Small", serif;
   --font-system-ui: system-ui, sans-serif;
-  --font-transitional:
-    Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  --font-transitional: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
 
   /* Spacing
-    /* ---------------------------------------------------------- */
+  /* ---------------------------------------------------------- */
   /* --spacing-vmin-sm: 1.5vmin !important; */
   /* --spacing-vmin3: 3vmin; */
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  /* color: var(--color-amazon-med); */
-}
 @layer components {
   /* a { */
   /*   color: var(--color-blue-500); */

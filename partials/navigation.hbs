@@ -1,5 +1,5 @@
 {{#if isSecondary}}
-  {{! A secondary menu can be templated here}}
+  {{! Secondary menu}}
   <ul>
     {{#foreach navigation}}
       <li class="mr-6 {{concat 'nav-' slug}}">
@@ -7,22 +7,82 @@
           href="{{url absolute="true"}}"
           class="{{link_class for=(url) activeClass="underline"}}"
         >
-          {{label}}
+          {{{label}}}
         </a>
       </li>
     {{/foreach}}
   </ul>
 {{else}}
-  <ul>
-    {{#foreach navigation}}
-      <li class="mb-1 {{concat 'nav-' slug}}">
-        <a
-          href="{{url absolute="true"}}"
-          class="{{link_class for=(url) activeClass="underline"}}"
-        >
-          {{label}}
-        </a>
+  {{! Primary menu}}
+  <nav class="
+    text-center md:text-left font-display font-normal text-2xl
+    mt-8
+    hidden
+    xl:block
+  ">
+    <ul class="flex flex-col gap-3">
+      {{#foreach navigation}}
+        <li class="{{concat 'nav-' slug}}">
+          <a
+            href="{{url absolute="true"}}"
+            class="{{link_class for=(url) activeClass="underline"}}""
+          >
+            <!-- class="{{link_class for=(url) activeClass="underline"}}" -->
+            <!-- <mark>{{label}}</mark> -->
+            {{label}}
+          </a>
+        </li>
+      {{/foreach}}
+      <li>
+        {{#if @site.members_enabled}}
+          {{^if @member}}
+            <a class="" href="{{@site.signup_url}}">Subscribe</a>
+          {{else}}
+            <a class="" href="#/portal/account">Account</a>
+          {{/if}}
+        {{/if}}
       </li>
-    {{/foreach}}
-  </ul>
+      <li>
+        <ul class="flex gap-2">
+          <li>
+            <search>
+              {{search}}
+            </search>
+          </li>
+          <li>
+            <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">
+              <span class="inline-block -translate-y-1">
+                {{> "icons/rss"}}
+              </span>
+            </a>
+          </li>
+          <!-- <li> -->
+          <!--   <a href="https://github.com/christopher-b/" rel="noopener nofollow" target="_blank"> -->
+          <!--     {{> "icons/github"}} -->
+          <!--   </a> -->
+          <!-- </li> -->
+          <!-- <li> -->
+          <!--   <a href="https://www.linkedin.com/in/christopher-bennell/" rel="noopener nofollow" target="_blank"> -->
+          <!--     {{> "icons/linkedin"}} -->
+          <!--   </a> -->
+          <!-- </li> -->
+          <!-- <li> -->
+          <!--   <a href="https://bsky.app/profile/cbennell.com" rel="noopener nofollow" target="_blank"> -->
+          <!--     {{> "icons/bsky"}} -->
+          <!--   </a> -->
+          <!-- </li> -->
+          <!-- <li> -->
+          <!--   <a href="mailto:cbennell@hey.com" rel="noopener nofollow"> -->
+          <!--     {{> "icons/email"}} -->
+          <!--   </a> -->
+          <!-- </li> -->
+          <!-- <li> -->
+          <!--   <a href="{{asset "files/christopher_bennell_resume.pdf"}}" rel="noopener nofollow" target="_blank"> -->
+          <!--     {{> "icons/file"}} -->
+          <!--   </a> -->
+          <!-- </li> -->
+        </ul>
+      </li>
+     </ul>
+   </nav>
 {{/if}}
