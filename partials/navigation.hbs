@@ -13,19 +13,54 @@
     {{/foreach}}
   </ul>
 {{else}}
-  {{! Primary menu}}
+  {{! Primary menu }}
+
+  {{! Open menu }}
+  <button id="mobile-menu-btn"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+  class="
+
+
+      xl:hidden
+      absolute top-3 right-3
+      p-2
+      rounded-md cursor-pointer
+      transition-colors
+    ">
+    {{> "icons/hamburger" }}
+  </button>
+
   <nav class="
-    text-center md:text-left font-display font-normal text-2xl
-    mt-8
-    hidden
+    font-display text-2xl
+    text-center md:text-left
+    xl:mt-8
     xl:block
+
+    pt-8
+    fixed top-0 left-0
+    w-full h-screen
+    bg-neutral-light/90
+    z-50
+    backdrop-blur-xs
   ">
+  {{!--
+    hidden
+  --}}
+    {{! Close menu }}
+    <div class="xl:hidden absolute top-3 right-3 text-right">
+      <button id="close-nav-btn" class="p-2 rounded-md hover:bg-gray-100" aria-label="Toggle menu">
+        {{> "icons/close"}}
+      </button>
+    </div>
+
     <ul class="flex flex-col gap-3">
       {{#foreach navigation}}
         <li class="{{concat 'nav-' slug}}">
           <a
             href="{{url absolute="true"}}"
-            class="{{link_class for=(url) activeClass="underline"}}""
+            class="{{link_class for=(url) activeClass="underline"}}"
           >
             <!-- class="{{link_class for=(url) activeClass="underline"}}" -->
             <!-- <mark>{{label}}</mark> -->
@@ -43,7 +78,7 @@
         {{/if}}
       </li>
       <li>
-        <ul class="flex gap-2">
+        <ul class="flex gap-2 justify-center xl:justify-start">
           <li>
             <search>
               {{search}}
@@ -56,33 +91,35 @@
               </span>
             </a>
           </li>
-          <!-- <li> -->
-          <!--   <a href="https://github.com/christopher-b/" rel="noopener nofollow" target="_blank"> -->
-          <!--     {{> "icons/github"}} -->
-          <!--   </a> -->
-          <!-- </li> -->
-          <!-- <li> -->
-          <!--   <a href="https://www.linkedin.com/in/christopher-bennell/" rel="noopener nofollow" target="_blank"> -->
-          <!--     {{> "icons/linkedin"}} -->
-          <!--   </a> -->
-          <!-- </li> -->
-          <!-- <li> -->
-          <!--   <a href="https://bsky.app/profile/cbennell.com" rel="noopener nofollow" target="_blank"> -->
-          <!--     {{> "icons/bsky"}} -->
-          <!--   </a> -->
-          <!-- </li> -->
-          <!-- <li> -->
-          <!--   <a href="mailto:cbennell@hey.com" rel="noopener nofollow"> -->
-          <!--     {{> "icons/email"}} -->
-          <!--   </a> -->
-          <!-- </li> -->
-          <!-- <li> -->
-          <!--   <a href="{{asset "files/christopher_bennell_resume.pdf"}}" rel="noopener nofollow" target="_blank"> -->
-          <!--     {{> "icons/file"}} -->
-          <!--   </a> -->
-          <!-- </li> -->
         </ul>
       </li>
-     </ul>
+    </ul>
+    <ul class="mt-16 xl:mt-30 flex gap-4 justify-center xl:justify-start [&_svg]:h-6 [&_svg]:w-6">
+      <li>
+        <a href="https://github.com/christopher-b/" rel="noopener nofollow" target="_blank">
+          {{> "icons/github"}}
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/christopher-bennell/" rel="noopener nofollow" target="_blank">
+          {{> "icons/linkedin"}}
+        </a>
+      </li>
+      <li>
+        <a href="https://bsky.app/profile/cbennell.com" rel="noopener nofollow" target="_blank">
+          {{> "icons/bsky"}}
+        </a>
+      </li>
+      <li>
+        <a href="mailto:cbennell@hey.com" rel="noopener nofollow">
+          {{> "icons/email"}}
+        </a>
+      </li>
+      <li>
+        <a href="{{asset "files/christopher_bennell_resume.pdf"}}" rel="noopener nofollow" target="_blank">
+          {{> "icons/file"}}
+        </a>
+      </li>
+    </ul>
    </nav>
 {{/if}}

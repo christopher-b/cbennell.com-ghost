@@ -1,4 +1,4 @@
-<header>
+<header class="text-center md:text-start flex flex-col gap-4 md:gap-8" >
   <!-- Close button for mobile -->
   <!--
   <div class="md:hidden mt-3 mr-3 text-right">
@@ -6,18 +6,11 @@
       {{> "icons/close"}}
     </button>
   </div>
-  <button
-    id="mobile-menu-btn"
-    class="md:hidden p-2 rounded-md transition-colors cursor-pointer"
-  >
-    {{> "icons/hamburger" }}
-  </button>
   -->
-
-  <a class="flex gap-4" href="{{@site.url}}">
+  <a class="flex flex-col md:flex-row gap-4 items-center" href="{{@site.url}}">
     {{#if @site.logo}}
       <img
-        class="rounded-full border-accent-med border-1 w-20 h-20"
+        class="rounded-full border-accent-med border-1 w-24 h-24"
         src="{{@site.logo}}"
         alt="{{@site.title}}"
       />
@@ -28,5 +21,5 @@
     </h1>
   </a>
 
-  <p class="mt-8 text-lg font-light font-display">{{{@site.description}}}</p>
+  <p class="text-lg font-light font-display">{{{@site.description}}}</p>
 </header>

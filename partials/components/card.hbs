@@ -1,8 +1,8 @@
 <article class="{{post_class}} overflow-hidden">
   <!-- <a href="{{url}}" class="flex h-48"> -->
-  <a href="{{url}}" class="flex lg:h-48 flex-col lg:flex-row">
+  <a href="{{url}}" class="flex md:h-48 flex-col md:flex-row gap-6">
     {{#if feature_image}}
-      <picture class="w-72 flex-shrink-0">
+      <picture class="md:w-72 overflow-hidden flex-shrink-0">
         <source
           srcset="
           {{img_url feature_image size="xxs" format="avif"}} 30w,
@@ -50,10 +50,10 @@
       </picture>
     {{/if}}
 
-    <div class="flex-1 ml-6 flex flex-col justify-between">
+    <div class="flex-1 flex flex-col justify-between gap-6">
       <div>
-        <h2 class="text-3xl font-semibold line-clamp-1">{{title}}</h2>
-        <p class="text-lg line-clamp-3 max-w-[75ch]">
+        <h2 class="text-2xl font-semibold md:line-clamp-1 pb-1">{{title}}</h2>
+        <p class="text-lg md:line-clamp-3 max-w-[75ch]">
           {{excerpt}}
         </p>
       </div>

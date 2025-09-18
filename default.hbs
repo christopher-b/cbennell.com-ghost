@@ -10,36 +10,33 @@
 
     <title>{{ meta_title }}</title>
 
-    {{
-      ghost_head
-    }}
+    {{ ghost_head }}
   </head>
 
-  <body
-    class="{{ body_class }} font-body min-h-screen flex flex-col bg-fixed
-    bg-[url(/assets/images/grain.svg)]
-    bg-neutral-light text-neutral-dark
-    dark:bg-[url(/assets/images/grain-light.svg)]
-    dark:bg-neutral-dark dark:text-neutral-light
+  {{! Body provides global padding, fonts, text colors and backgrounds }}
+  <body class="
+    {{ body_class }}
+    min-h-screen
+    p-8 md:p-16
+    font-body bg-fixed
+    text-neutral-dark dark:text-neutral-light
+    bg-[url(/assets/images/grain.svg)] bg-neutral-light
+    dark:bg-[url(/assets/images/grain-light.svg)] dark:bg-neutral-dark
   ">
     <div class="
-      m-16
-      flex flex-col gap-16
-      xl:flex-row
+      flex flex-col xl:flex-row
+      gap-8 md:gap-16
+      divide-y xl:divide-y-0 xl:divide-x
+      divide-neutral-med
+      dark:divide-neutral-muted
     ">
       <div id="sidebar" class="
-        border-neutral-med
-        dark:border-neutral-muted
-        border-b
-        pb-16
-        xl:pr-16
-        xl:pb-16
-        xl:border-r
-        xl:border-b-0
+        flex-1 top-16
+        h-fit
         xl:max-w-100
-        flex-1
+        pb-8 xl:pr-16 xl:pb-16
+        xl:sticky
       ">
-        <!-- xl:w-100 -->
         {{> components/header}}
         {{ navigation }}
       </div>
@@ -48,16 +45,18 @@
       </main>
     </div>
 
-    <div class="mx-16 py-16 border-t border-neutral-med dark:border-neutral-muted">
+    {{!--
+    <div class="py-8 mx-auto mt-8 border-t md:py-16 md:mx-0 md:mt-16 border-neutral-med dark:border-neutral-muted">
       {{> "components/footer"}}
     </div>
+    --}}
 
     {{#if @custom.development_mode}}
-    {{! In dev, Vite injects CSS/JS via HMR }}
-    <script type="module" src="http://localhost:5173/@vite/client"></script>
-    <script type="module" src="http://localhost:5173{{asset 'js/index.js'}}"></script>
+      {{! In dev, Vite injects CSS/JS via HMR }}
+      <script type="module" src="http://localhost:5173/@vite/client"></script>
+      <script type="module" src="http://localhost:5173{{asset 'js/index.js'}}"></script>
     {{else}}
-    {{> "vite_assets/foot"}}
+      {{> "vite_assets/foot"}}
     {{/if}}
 
     {{ ghost_foot }}

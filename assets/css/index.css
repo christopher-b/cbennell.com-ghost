@@ -9,11 +9,4 @@
   filter: sepia(100%) saturate(100%) hue-rotate(90deg);
 }
 
-/* nav mark, */
-/* header mark { */
-/*   padding-left: 0.25rem; */
-/*   padding-right: 0.25rem; */
-/*   background: linear-gradient(0deg, transparent 20%, var(--color-accent-light) 20%, var(--color-accent-light) 100%); */
-/* } */
-
 /* @custom-variant dark (&:where(.dark, .dark *)); */

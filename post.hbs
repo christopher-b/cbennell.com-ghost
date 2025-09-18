@@ -3,39 +3,34 @@
 {{#post}}
 <article class="{{post_class}}">
   <header>
-    <h1 class="text-6xl font-bold mb-6">{{title}}</h1>
+    <h1 class="text-5xl md:text-6xl font-bold mb-6">{{title}}</h1>
 
-    <div class="flex my-6">
-      <p class="italic">
-        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-        <span>&bull;</span>
-        {{reading_time}}
-        <!-- <span>&bull;</span> -->
-        <!-- Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}} -->
-      </p>
+    <p class="italic">
+      <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+      <span>&bull;</span>
+      {{reading_time}}
+    </p>
 
-      {{! tags separator=" • "}}
-      {{#if tags}}
-        <span class="mx-1">&bull;</span>
-        <ul class="flex gap-3">
-        {{#foreach tags}}
-          <li>
-            <a class="underline decoration-dotted
-              decoration-accent-light
-              text-accent-light
-              bg-accent-med
-              px-2 pt-1 pb-1.5
-              rounded
+    {{! tags separator=" • "}}
+    {{#if tags}}
+      <ul class="flex flex-wrap gap-3 my-3">
+      {{#foreach tags}}
+        <li>
+          <a class="underline decoration-dotted
+            decoration-accent-light
+            text-accent-light
+            bg-accent-med
+            px-2 pt-1 pb-1.5
+            rounded
 
-              dark:decoration-accent-light
-              dark:text-accent-light
-            "
-              href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
-          </li>
-        {{/foreach}}
-        </ul>
-      {{/if}}
-    </div>
+            dark:decoration-accent-light
+            dark:text-accent-light
+          "
+            href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
+        </li>
+      {{/foreach}}
+      </ul>
+    {{/if}}
 
     {{!--
     {{#if custom_excerpt}}
@@ -89,21 +84,20 @@
     {{/if}}
   </header>
 
-  <div class="content max-w-[75ch] text-xl prose prose-img:m-0 dark:prose-invert w-full line-numbers">
+  <div class="content max-w-[75ch] text-base md:text-xl prose prose-img:m-0 dark:prose-invert w-full line-numbers">
     {{content}}
   </div>
 
   <footer class="my-6">
     {{#if comments mode="auto"}}
-    <section class="my-6 dark:text-neutral-light">
-      {{comments}}
-
-    </section>
+      <section class="my-6 dark:text-[#fafaf9]"> {{! We supply the color as hex due to https://github.com/TryGhost/Ghost/issues/24906}}
+        {{comments}}
+      </section>
     {{/if}}
   </footer>
 </article>
 
-<aside class="mb-6 w-3xl flex gap-4">
+<aside class="mb-6 max-w-3xl flex gap-4">
   <div class="flex-1">
     {{#next_post}}
       <a href="{{url}}" class="inline-flex items-center">
