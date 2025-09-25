@@ -1,13 +1,5 @@
 <header class="text-center md:text-start flex flex-col gap-4 md:gap-8" >
-  <!-- Close button for mobile -->
-  <!--
-  <div class="md:hidden mt-3 mr-3 text-right">
-    <button id="close-nav-btn" class="p-2 rounded-md hover:bg-gray-100">
-      {{> "icons/close"}}
-    </button>
-  </div>
-  -->
-  <a class="flex flex-col md:flex-row gap-4 items-center" href="{{@site.url}}">
+  <a class="flex flex-col mx-auto md:mx-0 md:flex-row gap-4 items-center" href="{{@site.url}}">
     {{#if @site.logo}}
       <img
         class="rounded-full border-accent-med border-1 w-24 h-24"

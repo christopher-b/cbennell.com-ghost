@@ -3,10 +3,7 @@
   <ul>
     {{#foreach navigation}}
       <li class="mr-6 {{concat 'nav-' slug}}">
-        <a
-          href="{{url absolute="true"}}"
-          class="{{link_class for=(url) activeClass="underline"}}"
-        >
+        <a href="{{url absolute="true"}}" class="{{link_class for=(url) activeClass='underline'}}" >
           {{{label}}}
         </a>
       </li>
@@ -15,45 +12,42 @@
 {{else}}
   {{! Primary menu }}
 
-  {{! Open menu }}
-  <button id="mobile-menu-btn"
-          aria-label="Open navigation menu"
-          aria-expanded="false"
-          aria-controls="mobile-nav"
-  class="
-
-
-      xl:hidden
-      absolute top-3 right-3
-      p-2
-      rounded-md cursor-pointer
+  <button id="nav-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navigation" class="
+    hidden xl:hidden
+    absolute top-3 right-3
+    p-2 z-51
+    rounded-md cursor-pointer
+    [&_svg]:w-7 [&_svg]:h-7
+  ">
+    {{!--
       transition-colors
-    ">
-    {{> "icons/hamburger" }}
+      hover:bg-gray-200 dark:hover:bg-gray-700
+      focus:outline-none focus:ring-2 focus:ring-blue-500
+    --}}
+    <span id="open-icon">
+      {{> "icons/hamburger" }}
+    </span>
+    <span id="close-icon" class="hidden">
+      {{> "icons/close"}}
+    </span>
   </button>
 
-  <nav class="
-    font-display text-2xl
-    text-center md:text-left
-    xl:mt-8
-    xl:block
-
-    pt-8
-    fixed top-0 left-0
-    w-full h-screen
-    bg-neutral-light/90
-    z-50
-    backdrop-blur-xs
+      <!-- hidden xl:block -->
+  <nav id="navigation"
+    role="navigation"
+    class="
+      font-display text-2xl
+      text-center md:text-left xl:text-left
+      pt-8
+      w-full h-full
+      z-50
   ">
   {{!--
-    hidden
+      transition-translate
+      duration-300 ease-out
+      transform
   --}}
     {{! Close menu }}
-    <div class="xl:hidden absolute top-3 right-3 text-right">
-      <button id="close-nav-btn" class="p-2 rounded-md hover:bg-gray-100" aria-label="Toggle menu">
-        {{> "icons/close"}}
-      </button>
-    </div>
 
     <ul class="flex flex-col gap-3">
       {{#foreach navigation}}
@@ -94,6 +88,8 @@
         </ul>
       </li>
     </ul>
+
+    {{! Socials }}
     <ul class="mt-16 xl:mt-30 flex gap-4 justify-center xl:justify-start [&_svg]:h-6 [&_svg]:w-6">
       <li>
         <a href="https://github.com/christopher-b/" rel="noopener nofollow" target="_blank">

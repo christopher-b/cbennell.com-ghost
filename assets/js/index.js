@@ -7,7 +7,7 @@ import "../css/index.css"; // CSS entrypoint
 // Responsive menu
 import { initMenu } from "./menu.js";
 document.addEventListener("DOMContentLoaded", () => {
-  initMenu();
+  // initMenu();
 });
 
 // Vite hot module reload
