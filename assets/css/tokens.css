@@ -1,4 +1,7 @@
 :root {
+  /* Layout  */
+  --measure: 70ch;
+
   /* Spacing */
   --ratio: 1.5;
   --s-5: calc(var(--s-4) / var(--ratio));
@@ -13,24 +16,16 @@
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
 
+  /* Font Scale */
   /* @link https://utopia.fyi/type/calculator?c=360,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-  --step--2: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
-  --step--1: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
-  --step-0: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
-  --step-1: clamp(1.35rem, 1.2631rem + 0.3864vw, 1.5625rem);
-  --step-2: clamp(1.62rem, 1.4837rem + 0.6057vw, 1.9531rem);
-  --step-3: clamp(1.944rem, 1.7405rem + 0.9044vw, 2.4414rem);
-  --step-4: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
-  --step-5: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
-  --font-xs: var(--step--2);
-  --font-sm: var(--step--1);
-  --font-base: var(--step-0);
-  --font-md: var(--step-1);
-  --font-lg: var(--step-2);
-  --font-xl: var(--step-3);
-  --font-2xl: var(--step-4);
-  --font-3xl: var(--step-5);
-  --measure: 70ch;
+  --font-xs: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
+  --font-sm: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
+  --font-base: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+  --font-md: clamp(1.35rem, 1.2631rem + 0.3864vw, 1.5625rem);
+  --font-lg: clamp(1.62rem, 1.4837rem + 0.6057vw, 1.9531rem);
+  --font-xl: clamp(1.944rem, 1.7405rem + 0.9044vw, 2.4414rem);
+  --font-2xl: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
+  --font-3xl: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
 
   /* Fonts
   /* These are taken from https://modernfontstacks.com */
@@ -58,6 +53,10 @@
   --font-body: var(--gh-font-body, var(--font-transitional, sans-serif));
   --font-display: var(--gh-font-heading, Inter, sans-serif);
   --font-mono: var(--font-mono-code, monospace);
+
+  --font-display-weight-base: 300;
+  --font-display-weight-bold: 500;
+
   @supports (font-variation-settings: normal) {
     --font-display: var(--gh-font-heading, InterVariable, sans-serif);
   }
@@ -81,13 +80,4 @@
   --color-accent-dark: #222f27;
 
   --color-border: var(--color-neutral-300);
-
-  /* --color-neutral-light: oklch(98.5% 0.001 106.423); */
-  /* --color-neutral-med: oklch(86.9% 0.005 56.366); */
-  /* --color-neutral-muted: oklch(44.4% 0.011 73.639); */
-  /* --color-neutral-dark: oklch(27.4% 0.006 286.033); */
-  /* --color-neutral-light: var(--color-stone-50); */
-  /* --color-neutral-med: var(--color-stone-300); */
-  /* --color-neutral-muted: var(--color-stone-600); */
-  /* --color-neutral-dark: var(--color-zinc-800); */
 }

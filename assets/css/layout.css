@@ -1,0 +1,99 @@
+body {
+  @mixin stack var(--s3);
+  padding: 2vw;
+}
+
+body > footer {
+  border-block-start: thin solid var(--color-border);
+  padding-block: var(--s2);
+}
+
+.content-wrapper {
+  @mixin sidebar-parent 2rem;
+}
+
+.content-wrapper > header {
+  @mixin sidebar 20rem;
+
+  .masthead a {
+    @mixin cluster;
+    align-items: center;
+  }
+
+  .masthead h1 {
+    flex: 1;
+  }
+
+  .nav-extras {
+    @mixin cluster var(--s-1);
+  }
+}
+
+.content-wrapper > main {
+  @mixin sidebar-content 50%;
+
+  h1 {
+    padding-block-end: var(--s-1);
+    border-block-end: thin solid var(--color-border);
+  }
+}
+
+.article-list {
+  @mixin stack var(--s2);
+
+  article:not(:last-child) {
+    padding-bottom: var(--s2);
+    border-block-end: thin solid var(--color-neutral-100);
+  }
+
+  h2 {
+    margin-block-start: var(--s-4);
+  }
+}
+
+article .tags {
+  @mixin cluster var(--s-2);
+
+  margin-block: var(--s0);
+  padding: 0;
+}
+
+article .post-except {
+  margin-top: var(--s-2);
+}
+
+article .post-feature-image {
+  @mixin frame 2.35 / 1;
+}
+
+/* article > .content { */
+/*   h1, */
+/*   h2, */
+/*   h3, */
+/*   h4, */
+/*   h5, */
+/*   h6 { */
+/*     margin-block-start: var(--s3); */
+/*   } */
+/**/
+/*   p { */
+/*     max-inline-size: var(--measure); */
+/*   } */
+/**/
+/*   pre { */
+/*     margin-block-start: var(--s1); */
+/*     width: 100%; */
+/*   } */
+/* } */
+
+article footer {
+  border-block-start: thin solid var(--color-border);
+  margin-block-start: var(--s3);
+
+  nav {
+    @mixin cluster 1rem, space-between;
+    align-items: center;
+    border-block-end: thin solid var(--color-border);
+    padding-block: var(--s3);
+  }
+}

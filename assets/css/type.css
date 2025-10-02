@@ -1,3 +1,6 @@
+/* Defines base and high-level font families, sizes and weights */
+/* Specific component details are defined elsewhere */
+
 :root {
   font-family: var(--font-body);
   font-size: var(--font-base);
@@ -20,9 +23,12 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+body > footer,
+article footer,
+article .post-meta {
   font-family: var(--font-display);
-  font-weight: 300;
+  font-weight: var(--font-display-weight-base);
 }
 
 h1 {
@@ -44,51 +50,10 @@ h6 {
   font-size: var(--font-xs);
 }
 
-body > footer,
-article footer {
-{
-  font-family: var(--font-display);
-}
-
-.content-wrapper > header {
-  h1 {
-    font-size: var(--font-lg);
-  }
-
-  nav {
-    ul {
-      font-family: var(--font-display);
-      font-weight: 300;
-      font-size: var(--font-md);
-      line-height: var(--font-lg);
-    }
-
-    .nav-extras svg {
-      font-size: var(--font-lg);
-    }
-  }
-}
-
-article .post-meta {
-  font-family: var(--font-display);
-  font-weight: 300;
-  font-size: var(--font-xs);
-  color: var(--color-neutral-600);
-  @mixin dark-mode {
-    color: var(--color-neutral-300);
-  }
-}
-
 article > .content {
   font-size: 1.125rem;
 
   pre {
     font-size: 1rem;
-  }
-}
-
-article footer {
-  nav {
-    font-family: var(--font-display);
   }
 }

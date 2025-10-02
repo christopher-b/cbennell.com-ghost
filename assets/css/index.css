@@ -1,6 +1,7 @@
 @import "./mixins.css";
 @import "./tokens.css";
 @import "./reset.css";
+@import "./layout.css";
 @import "./type.css";
 @import "./utils.css";
 @import "./prism.css";
@@ -9,79 +10,32 @@
 
 :root {
   color-scheme: light dark;
-  font-family: var(--font-body);
-  font-size: var(--font-base);
-  font-feature-settings:
-   /* https://rsms.me/inter/lab/ */
-    /* Slashed zero */
-    "zero",
-    /* Tabular numbers */ "tnum",
-    /* Case-sensitive forms */ "case",
-    /* Capital spacing */ "cpsp",
-    /* Discretionary ligatures */ "dlig",
-    /* Open digits */ "ss01",
-    /* Disambiguation w/ zero */ "ss02",
-    /* Round quotes & commas */ "ss03",
-    /* Capital G with spur */ "cv10";
-  color: var(--color-neutral-900);
 
   :focus-visible {
     outline: 3px solid var(--color-accent-light);
     box-shadow: 0 0 0 6px var(--color-accent-dark);
-  }
-
-  @mixin dark-mode {
-    color: var(--color-neutral-100);
   }
 }
 
 body {
   @mixin stack var(--s3);
 
+  padding: 2vw;
   background-attachment: fixed;
   background-image: url(/assets/images/grain.svg);
   background-color: var(--color-neutral-light);
-  padding: 2vw;
+  color: var(--color-neutral-900);
 
   @mixin dark-mode {
     background-image: url(/assets/images/grain-light.svg);
     background-color: var(--color-neutral-dark);
+    color: var(--color-neutral-100);
   }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-display);
-  font-weight: 100;
-}
-
-h1 {
-  font-size: var(--font-2xl);
-}
-h2 {
-  font-size: var(--font-lg);
-}
-h3 {
-  font-size: var(--font-md);
-}
-h4 {
-  font-size: var(--font-base);
-}
-h5 {
-  font-size: var(--font-sm);
-}
-h6 {
-  font-size: var(--font-xs);
 }
 
 body > footer {
   border-block-start: thin solid var(--color-border);
   padding-block: var(--s2);
-  font-family: var(--font-display);
 }
 
 .content-wrapper {
@@ -91,13 +45,12 @@ body > footer {
 .content-wrapper > header {
   @mixin sidebar 20rem;
 
-  a {
-    text-decoration: none;
-  }
-
   h1 {
     font-size: var(--font-lg);
-    font-weight: 300;
+  }
+
+  a {
+    text-decoration: none;
   }
 
   .masthead img {
@@ -119,7 +72,7 @@ body > footer {
       list-style: none;
       padding: 0;
       font-family: var(--font-display);
-      font-weight: 300;
+      font-weight: var(--font-display-weight-base);
       font-size: var(--font-md);
       line-height: var(--font-lg);
     }
@@ -150,15 +103,10 @@ body > footer {
   h1 {
     padding-block-end: var(--s-1);
     border-block-end: thin solid var(--color-border);
-    font-weight: 300;
-
-    /* @mixin dark-mode { */
-    /*   border-color: thin solid --var(color-neutral-light); */
-    /* } */
   }
 }
 
-body .article-list {
+.article-list {
   @mixin stack var(--s2);
 
   article:not(:last-child) {
@@ -167,19 +115,41 @@ body .article-list {
   }
 
   h2 {
-    font-weight: 300;
+    margin-block-start: var(--s-4);
   }
-
   a {
     text-decoration: none;
+    /* &:hover { */
+    /*   color: var(--color-accent-dark); */
+    /*   text-decoration: underline; */
+    /*   background-color: var(--color-accent-light); */
+    /*   outline: 3px solid var(--color-accent-light); */
+    /* } */
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--color-accent-light);
+      border: 3px solid var(--color-accent-light);
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.1s ease-out;
+      z-index: -10;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
   }
 }
 
 article .post-meta {
-  font-family: var(--font-display);
-  font-weight: 300;
   font-size: var(--font-xs);
   color: var(--color-neutral-600);
+
   @mixin dark-mode {
     color: var(--color-neutral-300);
   }
@@ -213,7 +183,6 @@ article .tags {
 article .post-except {
   margin-top: var(--s-2);
   max-inline-size: var(--measure);
-  /* min-inline-size: var(--min-measure); */
 }
 
 article .post-feature-image {
@@ -221,7 +190,6 @@ article .post-feature-image {
 }
 
 article > .content {
-  font-size: 1.125rem;
   h1,
   h2,
   h3,
@@ -229,7 +197,6 @@ article > .content {
   h5,
   h6 {
     margin-block-start: var(--s3);
-    font-weight: 300;
   }
 
   p {
@@ -237,7 +204,6 @@ article > .content {
   }
 
   pre {
-    font-size: 1rem;
     margin-block-start: var(--s1);
     width: 100%;
   }
@@ -249,7 +215,6 @@ article footer {
 
   nav {
     @mixin cluster 1rem, space-between;
-    font-family: var(--font-display);
     align-items: center;
     border-block-end: thin solid var(--color-border);
     padding-block: var(--s3);
