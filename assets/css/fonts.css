@@ -2,16 +2,9 @@
 /* Allow font overrides in the theme UI, otherwise use families defined in the Tailwind theme */
 /* -------------- */
 
-@theme {
+/* @theme { */
+::root {
   --font-display: var(--gh-font-heading, var(--font-humanist)), var(--font-sans), sans-serif;
-  /* On my system, this font supports:
-   * thin
-   * light
-   * normal
-   * medium
-   * semibold
-   * bold
-   **/
   --font-body: var(--gh-font-body, var(--font-transitional)), var(--font-sans), sans-serif;
 }
 

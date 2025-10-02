@@ -1,0 +1,94 @@
+:root {
+  font-family: var(--font-body);
+  font-size: var(--font-base);
+  font-feature-settings:
+   /* https://rsms.me/inter/lab/ */
+    /* Slashed zero */
+    "zero",
+    /* Tabular numbers */ "tnum",
+    /* Case-sensitive forms */ "case",
+    /* Capital spacing */ "cpsp",
+    /* Discretionary ligatures */ "dlig",
+    /* Open digits */ "ss01",
+    /* Disambiguation w/ zero */ "ss02",
+    /* Round quotes & commas */ "ss03",
+    /* Capital G with spur */ "cv10";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 300;
+}
+
+h1 {
+  font-size: var(--font-2xl);
+}
+h2 {
+  font-size: var(--font-lg);
+}
+h3 {
+  font-size: var(--font-md);
+}
+h4 {
+  font-size: var(--font-base);
+}
+h5 {
+  font-size: var(--font-sm);
+}
+h6 {
+  font-size: var(--font-xs);
+}
+
+body > footer,
+article footer {
+{
+  font-family: var(--font-display);
+}
+
+.content-wrapper > header {
+  h1 {
+    font-size: var(--font-lg);
+  }
+
+  nav {
+    ul {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: var(--font-md);
+      line-height: var(--font-lg);
+    }
+
+    .nav-extras svg {
+      font-size: var(--font-lg);
+    }
+  }
+}
+
+article .post-meta {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--font-xs);
+  color: var(--color-neutral-600);
+  @mixin dark-mode {
+    color: var(--color-neutral-300);
+  }
+}
+
+article > .content {
+  font-size: 1.125rem;
+
+  pre {
+    font-size: 1rem;
+  }
+}
+
+article footer {
+  nav {
+    font-family: var(--font-display);
+  }
+}

@@ -1,7 +1,5 @@
 import "vite/modulepreload-polyfill"; // As per https://vite.dev/guide/backend-integration.html
-
 import "./prism"; // Code syntax highlighting
-
 import "../css/index.css"; // CSS entrypoint
 
 // Responsive menu

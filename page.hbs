@@ -1,28 +1,31 @@
 {{!< default}}
 
 {{#post}}
-<article class="{{post_class}}">
+<article class="{{ post_class }}">
   {{#match @page.show_title_and_feature_image}}
-    <header>
-      <h2 class="text-6xl font-bold mb-6">{{title}}</h1>
+  <header>
+    <h1>{{ title }}</h1>
 
-      {{#if custom_excerpt}}
-        <p class="my-6">{{custom_excerpt}}</p>
-      {{/if}}
+    {{#if custom_excerpt}}
+    <p>{{ custom_excerpt }}</p>
+    {{/if}}
 
-      {{#if feature_image}}
-        <figure class="w-full my-6">
-          <img src="{{feature_image}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
-          {{#if feature_image_caption}}
-            <figcaption class="text-sm italic pt-1">{{feature_image_caption}}</figcaption>
-          {{/if}}
-        </figure>
+    {{#if feature_image}}
+    {{> "components/feature-image" feature_image=feature_image }}
+    {{!--
+    <figure>
+      <img src="{{ feature_image }}" alt="{{#if feature_image_alt}}{{ feature_image_alt }}{{else}}{{ title }}{{/if}}" />
+      {{#if feature_image_caption}}
+      <figcaption>{{ feature_image_caption }}</figcaption>
       {{/if}}
-    </header>
+    </figure>
+    --}}
+    {{/if}}
+  </header>
   {{/match}}
 
-  <div class="content max-w-full text-lg prose prose-img:m-0 w-full">
-    {{content}}
+  <div class="content">
+    {{ content }}
   </div>
 </article>
 {{/post}}

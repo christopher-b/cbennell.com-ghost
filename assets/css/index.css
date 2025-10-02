@@ -1,12 +1,275 @@
-@import "./tailwind.css";
+@import "./mixins.css";
+@import "./tokens.css";
+@import "./reset.css";
+@import "./type.css";
+@import "./utils.css";
 @import "./prism.css";
-@import "./fonts.css";
 @import "./ghost/content.css";
-/* Customize member forms */
 /* @import "./ghost/members.css"; */
 
-.tinted-image {
-  filter: sepia(100%) saturate(100%) hue-rotate(90deg);
+:root {
+  color-scheme: light dark;
+  font-family: var(--font-body);
+  font-size: var(--font-base);
+  font-feature-settings:
+   /* https://rsms.me/inter/lab/ */
+    /* Slashed zero */
+    "zero",
+    /* Tabular numbers */ "tnum",
+    /* Case-sensitive forms */ "case",
+    /* Capital spacing */ "cpsp",
+    /* Discretionary ligatures */ "dlig",
+    /* Open digits */ "ss01",
+    /* Disambiguation w/ zero */ "ss02",
+    /* Round quotes & commas */ "ss03",
+    /* Capital G with spur */ "cv10";
+  color: var(--color-neutral-900);
+
+  :focus-visible {
+    outline: 3px solid var(--color-accent-light);
+    box-shadow: 0 0 0 6px var(--color-accent-dark);
+  }
+
+  @mixin dark-mode {
+    color: var(--color-neutral-100);
+  }
 }
 
-/* @custom-variant dark (&:where(.dark, .dark *)); */
+body {
+  @mixin stack var(--s3);
+
+  background-attachment: fixed;
+  background-image: url(/assets/images/grain.svg);
+  background-color: var(--color-neutral-light);
+  padding: 2vw;
+
+  @mixin dark-mode {
+    background-image: url(/assets/images/grain-light.svg);
+    background-color: var(--color-neutral-dark);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 100;
+}
+
+h1 {
+  font-size: var(--font-2xl);
+}
+h2 {
+  font-size: var(--font-lg);
+}
+h3 {
+  font-size: var(--font-md);
+}
+h4 {
+  font-size: var(--font-base);
+}
+h5 {
+  font-size: var(--font-sm);
+}
+h6 {
+  font-size: var(--font-xs);
+}
+
+body > footer {
+  border-block-start: thin solid var(--color-border);
+  padding-block: var(--s2);
+  font-family: var(--font-display);
+}
+
+.content-wrapper {
+  @mixin sidebar-parent 2rem;
+}
+
+.content-wrapper > header {
+  @mixin sidebar 20rem;
+
+  a {
+    text-decoration: none;
+  }
+
+  h1 {
+    font-size: var(--font-lg);
+    font-weight: 300;
+  }
+
+  .masthead img {
+    max-width: 6rem;
+    border-radius: 50%;
+  }
+
+  .masthead a {
+    @mixin cluster;
+    align-items: center;
+  }
+
+  .masthead h1 {
+    flex: 1;
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: var(--font-md);
+      line-height: var(--font-lg);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-extras {
+      @mixin cluster var(--s-1);
+    }
+
+    .nav-extras svg {
+      font-size: var(--font-lg);
+    }
+
+    search button {
+      background: none;
+      color: inherit;
+      padding: 0;
+    }
+  }
+}
+
+.content-wrapper > main {
+  @mixin sidebar-content 50%;
+
+  h1 {
+    padding-block-end: var(--s-1);
+    border-block-end: thin solid var(--color-border);
+    font-weight: 300;
+
+    /* @mixin dark-mode { */
+    /*   border-color: thin solid --var(color-neutral-light); */
+    /* } */
+  }
+}
+
+body .article-list {
+  @mixin stack var(--s2);
+
+  article:not(:last-child) {
+    padding-bottom: var(--s2);
+    border-block-end: thin solid var(--color-neutral-100);
+  }
+
+  h2 {
+    font-weight: 300;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+article .post-meta {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--font-xs);
+  color: var(--color-neutral-600);
+  @mixin dark-mode {
+    color: var(--color-neutral-300);
+  }
+}
+
+article .tags {
+  @mixin cluster var(--s-2);
+
+  margin-block: var(--s0);
+  padding: 0;
+  list-style: none;
+
+  > * {
+    color: var(--color-accent-light);
+    background-color: var(--color-accent-med);
+    border-radius: var(--s-4);
+    padding-inline: var(--s-1);
+    padding-block-start: var(--s-5);
+    padding-block-end: var(--s-5);
+
+    /* @mixin dark-mode { */
+    /*   color: var(--color-accent-light); */
+    /*   background-color: var(--color-accent-med); */
+    /* } */
+  }
+  a {
+    text-decoration-style: dotted;
+  }
+}
+
+article .post-except {
+  margin-top: var(--s-2);
+  max-inline-size: var(--measure);
+  /* min-inline-size: var(--min-measure); */
+}
+
+article .post-feature-image {
+  @mixin frame 2.35 / 1;
+}
+
+article > .content {
+  font-size: 1.125rem;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-block-start: var(--s3);
+    font-weight: 300;
+  }
+
+  p {
+    max-inline-size: var(--measure);
+  }
+
+  pre {
+    font-size: 1rem;
+    margin-block-start: var(--s1);
+    width: 100%;
+  }
+}
+
+article footer {
+  border-block-start: thin solid var(--color-border);
+  margin-block-start: var(--s3);
+
+  nav {
+    @mixin cluster 1rem, space-between;
+    font-family: var(--font-display);
+    align-items: center;
+    border-block-end: thin solid var(--color-border);
+    padding-block: var(--s3);
+
+    svg {
+      @mixin icon;
+    }
+  }
+
+  .comments {
+    padding-block: var(--s3);
+    color: #000000;
+
+    @mixin dark-mode {
+      color: #ffffff;
+    }
+  }
+}
+
+#ghost-portal-root,
+#sodo-search-root {
+  margin-block-start: 0;
+}

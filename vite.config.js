@@ -19,13 +19,7 @@ export default defineConfig({
       input: "assets/js/index.js",
     },
   },
-  // server: {
-  //   cors: {
-  //     origin: "http://localhost:2368",
-  //   },
-  // },
   plugins: [
-    // reloadHbs(),
     ViteRestart({
       reload: ["**/*.hbs"],
     }),

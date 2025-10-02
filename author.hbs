@@ -1,46 +1,38 @@
 {{!< default}}
 
-<div class="px-12 w-3xl">
-  {{#author}}
-  <header class="">
+{{#author}}
+  <header>
     {{#if profile_image}}
-        <img class="rounded-full" src="{{profile_image}}" alt="{{name}}" />
+      <img class="rounded-full" src="{{profile_image}}" alt="{{name}}" />
     {{/if}}
 
-    <h2 class="text-xl">{{name}}</h2>
+    <h2>{{name}}</h2>
 
     {{#if bio}}
-        <p class="my-3">{{bio}}</p>
+      <p>{{bio}}</p>
     {{/if}}
 
-    <div class="my-3">
-      {{#if website}}
-        <a href="{{website}}" target="_blank" rel="noopener">Website</a>
-      {{/if}}
-      {{#if twitter}}
-        <a href="{{social_url type="twitter"}}" target="_blank" rel="noopener">Twitter</a>
-      {{/if}}
-      {{#if facebook}}
-        <a href="{{social_url type="facebook"}}" target="_blank" rel="noopener">Facebook</a>
-      {{/if}}
-      {{#if bluesky}}
-        <a href="{{social_url type="bluesky"}}" target="_blank" rel="noopener">Bluesky</a>
-      {{/if}}
-    </div>
+    {{#if website}}
+      <a href="{{website}}" target="_blank" rel="noopener">Website</a>
+    {{/if}}
+    {{#if twitter}}
+      <a href="{{social_url type="twitter"}}" target="_blank" rel="noopener">Twitter</a>
+    {{/if}}
+    {{#if facebook}}
+      <a href="{{social_url type="facebook"}}" target="_blank" rel="noopener">Facebook</a>
+    {{/if}}
+    {{#if bluesky}}
+      <a href="{{social_url type="bluesky"}}" target="_blank" rel="noopener">Bluesky</a>
+    {{/if}}
 
     {{#if cover_image}}
-        <img class="gh-page-image" src="{{cover_image}}" alt="{{name}}" />
+      <img src="{{cover_image}}" alt="{{name}}" />
     {{/if}}
   </header>
-  {{/author}}
+{{/author}}
 
-  <div>
-    <h3 class="text-4xl mb-3">Posts by this author</h3>
+<h3>Posts by this author</h3>
 
-    <div class="flex flex-col gap-10">
-      {{#foreach posts}}
-        {{> "components/card"}} {{!-- partials/card.hbs --}}
-      {{/foreach}}
-    </div>
-  </div>
-</div>
+{{#foreach posts}}
+  {{> "components/card"}} {{!-- partials/card.hbs --}}
+{{/foreach}}

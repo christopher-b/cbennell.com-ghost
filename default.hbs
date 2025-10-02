@@ -5,54 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {{#unless @custom.development_mode}}
-    {{> "vite_assets/head"}}
+      {{> "vite_assets/head"}}
     {{/unless}}
 
     <title>{{ meta_title }}</title>
 
     {{ ghost_head }}
-  </head>
 
-  {{! Body provides global padding, fonts, text colors and backgrounds }}
-  <body class="
-    {{ body_class }}
-    min-h-screen
-    p-8 md:p-16
-    font-body bg-fixed
-    text-neutral-dark dark:text-neutral-light
-    bg-[url(/assets/images/grain.svg)] bg-neutral-light
-    dark:bg-[url(/assets/images/grain-light.svg)] dark:bg-neutral-dark
-  ">
-    <div class="
-      flex flex-col xl:flex-row
-      gap-8 md:gap-16
-      divide-y xl:divide-y-0 xl:divide-x
-      divide-neutral-med
-      dark:divide-neutral-muted
-    ">
-      <div id="sidebar" class="
-        flex-1 top-16
-        h-fit
-        xl:max-w-100
-        pb-8 xl:pr-16 xl:pb-16
-        xl:sticky
-      ">
-        {{> components/header}}
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  </head>
+  <body class="{{ body_class }}">
+    <div class="content-wrapper">
+      <header>
+        {{> components/masthead}}
         {{ navigation }}
-      </div>
-      <main class="max-w-6xl flex-3">
+      </header>
+
+      <main>
         {{{ body }}}
       </main>
     </div>
 
-    {{!--
-    <div class="py-8 mx-auto mt-8 border-t md:py-16 md:mx-0 md:mt-16 border-neutral-med dark:border-neutral-muted">
-      {{> "components/footer"}}
-    </div>
-    --}}
+    {{> "components/footer"}}
 
     {{#if @custom.development_mode}}
-      {{! In dev, Vite injects CSS/JS via HMR }}
       <script type="module" src="http://localhost:5173/@vite/client"></script>
       <script type="module" src="http://localhost:5173{{asset 'js/index.js'}}"></script>
     {{else}}

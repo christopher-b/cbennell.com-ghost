@@ -1,0 +1,47 @@
+{{#if feature_image}}
+  <picture class="post-feature-image">
+    <source
+      srcset="
+      {{img_url feature_image size="xxs" format="avif"}} 30w,
+      {{img_url feature_image size="xs" format="avif"}} 100w,
+      {{img_url feature_image size="s" format="avif"}} 300w,
+      {{img_url feature_image size="m" format="avif"}} 600w,
+      {{img_url feature_image size="l" format="avif"}} 1200w,
+      {{img_url feature_image size="xl" format="avif"}} 2000w"
+      {{!-- Customize first card here --}}
+      {{!-- {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}} --}}
+      sizes="(min-width: 1200px) 1200px, 100vw)"
+      type="image/avif"
+      {{^if @first}}loading="lazy"{{/if}}
+    >
+    <source
+      srcset="
+      {{img_url feature_image size="xxs" format="webp"}} 30w,
+      {{img_url feature_image size="xs" format="webp"}} 100w,
+      {{img_url feature_image size="s" format="webp"}} 300w,
+      {{img_url feature_image size="m" format="webp"}} 600w,
+      {{img_url feature_image size="l" format="webp"}} 1200w,
+      {{img_url feature_image size="xl" format="webp"}} 2000w"
+      {{!-- Customize first card here --}}
+      {{!-- {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}} --}}
+      sizes="(min-width: 1200px) 1200px, 100vw)"
+      type="image/webp"
+      {{^if @first}}loading="lazy"{{/if}}
+    >
+    <img
+      srcset="
+      {{img_url feature_image size="xxs"}} 30w,
+      {{img_url feature_image size="xs"}} 100w,
+      {{img_url feature_image size="s"}} 300w,
+      {{img_url feature_image size="m"}} 600w,
+      {{img_url feature_image size="l"}} 1200w,
+      {{img_url feature_image size="xl"}} 2000w"
+      {{!-- Customize first card here --}}
+      {{!-- {{^if @first}}sizes="(min-width: 1200px) 1200px, 100vw)"{{else}}sizes="(min-width: 800px) 100vw, 700px"{{/if}} --}}
+      sizes="(min-width: 1200px) 1200px, 100vw)"
+      src="{{img_url feature_image size="m"}}"
+      alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+      {{^if @first}}loading="lazy"{{/if}}
+    >
+  </picture>
+{{/if}}
