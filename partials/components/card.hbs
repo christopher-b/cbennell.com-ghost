@@ -1,4 +1,4 @@
-<article class="{{ post_class }}">
+<article class="post-card {{ post_class }}" aria-labelledby="post-header-{{ id }}">
   {{!> "components/feature-image" feature_image=feature_image }}
   <p class="post-meta">
     <time datetime="{{date format='YYYY-MM-DD'}}">
@@ -7,7 +7,7 @@
     <span>&bull;</span>
     {{ reading_time }}
   </p>
-  <h2>
+  <h2 id="post-header-{{ id }}">
     <a href="{{ url }}">
       {{ title }}
     </a>

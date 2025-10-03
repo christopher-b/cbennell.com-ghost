@@ -36,23 +36,24 @@
   <footer>
     <nav aria-label="Next / previous posts">
       <span>
-        {{#next_post}}
+        {{#prev_post}}
         {{> "icons/arrow-left"}}
-        <a href="{{ url }}" rel="next">{{ title }}</a>
-        {{/next_post}}
+        Previous:
+        <a href="{{ url }}" rel="prev">{{ title }}</a>
+        {{/prev_post}}
       </span>
 
       <span>
-        {{#prev_post}}
-        <a href="{{ url }}" rel="prev">{{ title }}</a>
+        {{#next_post}}
+        Next:
+        <a href="{{ url }}" rel="next">{{ title }}</a>
         {{> "icons/arrow-right"}}
-        {{/prev_post}}
+        {{/next_post}}
       </span>
     </nav>
 
-    {{#if comments mode="auto"}}
+    {{#if comments}}
     <aside class="comments">
-      {{! We supply the color as hex due to https://github.com/TryGhost/Ghost/issues/24906}}
       {{ comments mode="dark"}}
     </aside>
     {{/if}}
