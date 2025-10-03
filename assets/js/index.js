@@ -2,11 +2,7 @@ import "vite/modulepreload-polyfill"; // As per https://vite.dev/guide/backend-i
 import "./prism"; // Code syntax highlighting
 import "../css/index.css"; // CSS entrypoint
 
-// Responsive menu
-import { initMenu } from "./menu.js";
-document.addEventListener("DOMContentLoaded", () => {
-  // initMenu();
-});
+// document.addEventListener("DOMContentLoaded", () => { });
 
 // Vite hot module reload
 if (import.meta.hot) {
