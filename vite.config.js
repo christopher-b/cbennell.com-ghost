@@ -1,10 +1,9 @@
 import { defineConfig } from "vite";
-import tailwindcss from "@tailwindcss/vite";
 import ghostManifestPartials from "./lib/vite/ghost-manifest-partials.js";
 import ViteRestart from "vite-plugin-restart";
-// import reloadHbs from "./lib/vite/reload-hbs.js";
 
 export default defineConfig({
+  // base: "assets/built",
   publicDir: false,
   manifest: true,
   css: {
@@ -28,6 +27,5 @@ export default defineConfig({
       "partials/vite_assets/head.hbs",
       "partials/vite_assets/foot.hbs",
     ),
-    tailwindcss(),
   ],
 });
