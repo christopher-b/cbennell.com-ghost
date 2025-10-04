@@ -1,17 +1,21 @@
 {{!< default}}
 
 {{#author}}
+<article>
   <header>
     {{#if profile_image}}
       <img class="rounded-full" src="{{profile_image}}" alt="{{name}}" />
     {{/if}}
 
-    <h2>{{name}}</h2>
+    <h1>{{name}}</h1>
 
     {{#if bio}}
-      <p>{{bio}}</p>
+      <div class="content">
+        {{bio}}
+      </div>
     {{/if}}
 
+    {{!--
     {{#if website}}
       <a href="{{website}}" target="_blank" rel="noopener">Website</a>
     {{/if}}
@@ -24,15 +28,20 @@
     {{#if bluesky}}
       <a href="{{social_url type="bluesky"}}" target="_blank" rel="noopener">Bluesky</a>
     {{/if}}
+    --}}
 
     {{#if cover_image}}
       <img src="{{cover_image}}" alt="{{name}}" />
     {{/if}}
   </header>
+</article>
 {{/author}}
 
-<h3>Posts by this author</h3>
-
+{{!--
+<h2>Posts by this author</h2>
+<div class="article-list">
 {{#foreach posts}}
-  {{> "components/card"}} {{!-- partials/card.hbs --}}
+  {{> "components/card"}}
 {{/foreach}}
+</div>
+--}}
