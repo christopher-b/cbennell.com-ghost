@@ -3,7 +3,7 @@ import ghostManifestPartials from "./lib/vite/ghost-manifest-partials.js";
 import ViteRestart from "vite-plugin-restart";
 
 export default defineConfig({
-  // base: "assets/built",
+  base: "./",
   publicDir: false,
   manifest: true,
   css: {
