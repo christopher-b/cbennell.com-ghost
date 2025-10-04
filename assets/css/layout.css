@@ -26,5 +26,9 @@ body > footer {
   article:not(:last-child) {
     padding-bottom: var(--s2);
     border-block-end: thin solid var(--color-neutral-100);
+
+    @mixin dark-mode {
+      border-block-end: thin solid var(--color-neutral-700);
+    }
   }
 }
