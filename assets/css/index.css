@@ -168,14 +168,6 @@ article .post-feature-image {
   @mixin frame 2.35 / 1;
 }
 
-article .post-except {
-  margin-top: var(--s-2);
-}
-
-article .post-feature-image {
-  @mixin frame 2.35 / 1;
-}
-
 article > .content {
   h1,
   h2,
