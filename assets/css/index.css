@@ -190,6 +190,11 @@ article > .content {
     max-inline-size: var(--measure);
   }
 
+  p > code {
+    /* Inline code samples */
+    font-size: var(--font-sm);
+  }
+
   pre {
     margin-block-start: var(--s1);
     width: 100%;
