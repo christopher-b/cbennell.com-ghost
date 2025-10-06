@@ -1,22 +1,19 @@
 body {
-  @mixin stack var(--s3);
+  @mixin sidebar-parent 2rem;
   padding: 2vw;
 }
 
-body > footer {
+footer {
+  min-inline-size: 100%;
   border-block-start: thin solid var(--color-border);
   padding-block: var(--s2);
 }
 
-.content-wrapper {
-  @mixin sidebar-parent 2rem;
-}
-
-.content-wrapper > header {
+body > header {
   @mixin sidebar 20rem;
 }
 
-.content-wrapper > main {
+body > main {
   @mixin sidebar-content 50%;
 }
 

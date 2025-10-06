@@ -26,7 +26,6 @@
 @define-mixin icon {
   height: 1cap;
   width: 1cap;
-  /* vertical-align: -0.0625rem; */
 }
 
 /* https://every-layout.dev/layouts/stack/ */

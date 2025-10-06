@@ -28,7 +28,7 @@ body {
   }
 }
 
-.content-wrapper > header {
+body > header {
   h1 {
     font-size: var(--font-lg);
   }
@@ -81,7 +81,7 @@ body {
   }
 }
 
-.content-wrapper > main {
+body > main {
   h1 {
     padding-block-end: var(--s-1);
     border-block-end: thin solid var(--color-border);
@@ -222,4 +222,10 @@ article footer {
 #ghost-portal-root,
 #sodo-search-root {
   margin-block-start: 0;
+}
+
+.ghost-display {
+  @mixin dark-mode {
+    background-color: #0f0f0f; /* pick your dark background */
+  }
 }

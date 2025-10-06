@@ -13,46 +13,42 @@
   {{ghost_head}}
 </head>
 <body class="{{body_class}}">
-  <div class="content-wrapper">
-    <header>
-      {{> components/masthead}}
-      {{ navigation }}
-    </header>
+  <header>
+    {{> components/masthead}}
+    {{ navigation }}
+  </header>
 
-    <main>
-      <h1>Error: {{statusCode}}</h2>
-      <p>&ldquo;{{message}}&rdquo;</p>
-      <p><a href="{{@site.url}}">Return home →</a></p>
+  <main>
+    <h1>Error: {{statusCode}}</h2>
+    <p>&ldquo;{{message}}&rdquo;</p>
+    <p><a href="{{@site.url}}">Return home →</a></p>
 
-      {{#if errorDetails}}
-      <section>
-        <h2>Theme errors:</h3>
-        <ul>
-          {{#foreach errorDetails}}
-          <li>
-            <h3 class="gh-error-stack-function">{{{rule}}}</h4>
+    {{#if errorDetails}}
+    <section>
+      <h2>Theme errors:</h3>
+      <ul>
+        {{#foreach errorDetails}}
+        <li>
+          <h3 class="gh-error-stack-function">{{{rule}}}</h4>
 
-            {{#foreach failures}}
-              <span><strong>Ref:</strong> {{ref}}</span><br>
-              <span><strong>Message:</strong> {{message}}</span>
-            {{/foreach}}
-          </li>
+          {{#foreach failures}}
+            <span><strong>Ref:</strong> {{ref}}</span><br>
+            <span><strong>Message:</strong> {{message}}</span>
           {{/foreach}}
-        </ul>
-      </section>
-      {{/if}}
-    </main>
-  </div>
+        </li>
+        {{/foreach}}
+      </ul>
+    </section>
+    {{/if}}
+  </main>
 
-  {{> "components/footer"}}
+  {{> components/footer }}
 
   {{#if @custom.development_mode}}
-    {{! In dev, Vite injects CSS/JS via HMR }}
     <script type="module" src="http://localhost:5173/@vite/client"></script>
-    <script type="module" src="http://localhost:5173{{asset "js/index.js"}}"></script>
-    <!-- <script type="module" src="http://localhost:5173{{asset "css/index.css"}}"></script> -->
+    <script type="module" src="http://localhost:5173{{asset 'js/index.js'}}"></script>
   {{else}}
-    {{> "vite_assets/foot"}}
+    {{> vite_assets/foot }}
   {{/if}}
 
   {{ghost_foot}}

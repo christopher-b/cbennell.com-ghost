@@ -16,24 +16,23 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   </head>
   <body class="{{ body_class }}">
-    <div class="content-wrapper">
-      <header>
-        {{> components/masthead}}
-        {{ navigation }}
-      </header>
+    <header>
+      {{> components/masthead}}
+      {{ navigation }}
+    </header>
 
-      <main>
-        {{{ body }}}
-      </main>
-    </div>
+    <main>
+      {{{ body }}}
+    </main>
 
-    {{> "components/footer"}}
+    {{> components/footer }}
+
 
     {{#if @custom.development_mode}}
       <script type="module" src="http://localhost:5173/@vite/client"></script>
       <script type="module" src="http://localhost:5173{{asset 'js/index.js'}}"></script>
     {{else}}
-      {{> "vite_assets/foot"}}
+      {{> vite_assets/foot }}
     {{/if}}
 
     {{ ghost_foot }}
