@@ -17,10 +17,10 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build theme
-        run: yarn zip
+        run: ZIP_FILE=dist/theme.zip yarn zip
       - name: Deploy to Ghost
         uses: TryGhost/action-deploy-theme@v1
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
           api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
-          file: dist/cbennell-theme.zip
+          file: dist/theme.zip

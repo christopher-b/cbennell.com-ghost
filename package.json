@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "zip": "yarn build && npx bestzip dist/$npm_package_name.zip assets/built partials/* members/* *.hbs package.json",
+    "zip": "yarn build && npx bestzip ${ZIP_FILE:-dist/$npm_package_name.zip} assets/built partials/* members/* *.hbs package.json",
     "test": "npx gscan .",
     "pretest": "yarn build"
   },
