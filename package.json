@@ -1,7 +1,7 @@
 {
   "name": "cbennell-theme",
   "description": "A Ghost theme for cbennell.com",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "engines": {
     "ghost": ">=5.0.0"
   },
