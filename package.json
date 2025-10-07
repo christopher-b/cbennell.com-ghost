@@ -31,10 +31,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/christopher-b/sidelight.git"
+    "url": "https://github.com/christopher-b/cbennell.com-ghost.git"
   },
-  "bugs": "https://github.com/christopher-b/sidelight/issues",
-  "contributors": "https://github.com/christopher-b/sidelight/graphs/contributors",
+  "bugs": "https://github.com/christopher-b/cbennell.com-ghost/issues",
+  "contributors": "https://github.com/christopher-b/cbennell.com-ghost/graphs/contributors",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.12",

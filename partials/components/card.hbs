@@ -1,21 +1,11 @@
-<article class="post-card {{ post_class }}" aria-labelledby="post-header-{{ id }}">
-  {{!> "components/feature-image" feature_image=feature_image }}
-  <p class="post-meta">
-    <time datetime="{{date format='YYYY-MM-DD'}}">
-      {{date format="DD MMM YYYY"}}
-    </time>
+<article card class="{{ post_class }}" aria-labelledby="post-header-{{ id }}">
+  {{> components/post-meta tags=false }}
 
-    <span>&bull;</span>
-
-    {{ reading_time }}
-  </p>
   <h2 id="post-header-{{ id }}">
     <a href="{{ url }}">
       {{ title }}
     </a>
   </h2>
 
-  <p class="post-except">
-    {{ excerpt }}
-  </p>
+  <excerpt>{{ excerpt }}</excerpt>
 </article>

@@ -1,10 +1,12 @@
 {{!< default}}
-<div class="article-list">
+
+<article-list>
   <h1>Articles</h1>
+
   {{#foreach posts}}
   {{> "components/card" page=../pagination.page }}
   {{/foreach}}
-</div>
+</article-list>
 
 {{!-- If JS isn't enabled, fallback to standard pagination --}}
 <noscript>

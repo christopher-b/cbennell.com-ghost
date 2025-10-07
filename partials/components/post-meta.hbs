@@ -1,0 +1,21 @@
+<post-meta>
+  <time datetime="{{date format='YYYY-MM-DD'}}">
+    {{date format="DD MMM YYYY"}}
+  </time>
+
+  &bull;
+
+  {{ reading_time }}
+
+  {{#if tags}}
+  <tag-list>
+    {{#foreach tags}}
+    <tag>
+      <a href="{{ url }}" title="{{ name }}" class="tag tag-{{ id }} {{ slug }}" rel="tag">
+        {{ name }}
+      </a>
+    </tag>
+    {{/foreach}}
+  </tag-list>
+  {{/if}}
+</post-meta>

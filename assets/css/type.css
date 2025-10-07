@@ -26,7 +26,7 @@ h5,
 h6,
 body > footer,
 article footer,
-article .post-meta {
+article post-meta {
   font-family: var(--font-display);
   font-weight: var(--font-display-weight-base);
 }
@@ -50,7 +50,7 @@ h6 {
   font-size: var(--font-xs);
 }
 
-article > .content {
+article > content {
   font-size: var(--font-base);
 
   pre {

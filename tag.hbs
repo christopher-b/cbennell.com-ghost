@@ -1,10 +1,10 @@
 {{!< default}}
 
-<div class="article-list">
+<article-list>
   {{#tag}}
   <h1>Posts tagged &ldquo;{{ name }}&rdquo;</h1>
   {{#if feature_image}}
-  {{> "components/feature-image" feature_image=feature_image }}
+  {{> "components/feature-image" }}
   {{/if}}
 
   <p>
@@ -19,4 +19,4 @@
   {{#foreach posts}}
   {{> "components/card" page=../pagination.page }}
   {{/foreach}}
-</div>
+</article-list>

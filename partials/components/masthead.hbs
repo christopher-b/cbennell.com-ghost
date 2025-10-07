@@ -1,13 +1,11 @@
-<div class="masthead" aria-labelledby="site-title">
+<masthead aria-labelledby="site-title">
   <a href="{{@site.url}}" rel="home">
     {{#if @site.logo}}
     <img src="{{@site.logo}}" alt="" />
     {{/if}}
 
-    <h1 id="site-title">
-      {{@site.title}}
-    </h1>
+    <h1 id="site-title">{{@site.title}}</h1>
   </a>
 
   <p>{{@site.description}}</p>
-</div>
+</masthead>

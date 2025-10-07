@@ -4,57 +4,35 @@
 <article class="{{ post_class }}">
   <header>
     <h1>{{ title }}</h1>
-
-    <div class="post-meta">
-      <time datetime="{{date format='YYYY-MM-DD'}}">
-        {{date format="DD MMM YYYY"}}
-      </time>
-      <span>&bull;</span>
-      {{ reading_time }}
-
-      {{! tags separator=" • "}}
-      {{#if tags}}
-      <ul class="tags">
-        {{#foreach tags}}
-        <li>
-          <a href="{{ url }}" title="{{ name }}" class="tag tag-{{ id }} {{ slug }}" rel="tag">
-            {{ name }}
-          </a>
-        </li>
-        {{/foreach}}
-      </ul>
-      {{/if}}
-    </div>
-
-    {{> "components/feature-image" feature_image=feature_image }}
+    {{> components/post-meta }}
+    {{> components/feature-image }}
   </header>
 
-  <div class="content">
-    {{ content }}
-  </div>
+  <content>{{ content }}</content>
 
   <footer>
     <nav aria-label="Next / previous posts">
-      <span>
-        {{#prev_post}}
-        {{> "icons/arrow-left"}}
-        Previous:
-        <a href="{{ url }}" rel="prev">{{ title }}</a>
-        {{/prev_post}}
-      </span>
-
-      <span>
-        {{#next_post}}
-        Next:
-        <a href="{{ url }}" rel="next">{{ title }}</a>
-        {{> "icons/arrow-right"}}
-        {{/next_post}}
-      </span>
+      <ul>
+        <li>
+          {{#prev_post}}
+          {{> "icons/arrow-left"}}
+          Previous:
+          <a href="{{ url }}" rel="prev">{{ title }}</a>
+          {{/prev_post}}
+        </li>
+        <li>
+          {{#next_post}}
+          Next:
+          <a href="{{ url }}" rel="next">{{ title }}</a>
+          {{> "icons/arrow-right"}}
+          {{/next_post}}
+        </li>
+      </ul>
     </nav>
 
     {{#if comments}}
-    <aside class="comments">
-      {{ comments }}
+    <aside comments>
+      {{comments title="Comments" mode="auto"}}
     </aside>
     {{/if}}
   </footer>

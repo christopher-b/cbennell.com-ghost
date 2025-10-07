@@ -7,17 +7,15 @@
     <h1>{{ title }}</h1>
 
     {{#if custom_excerpt}}
-    <p>{{ custom_excerpt }}</p>
+    <excerpt>{{ custom_excerpt }}</excerpt>
     {{/if}}
 
     {{#if feature_image}}
-    {{> "components/feature-image" feature_image=feature_image }}
+    {{> "components/feature-image" }}
     {{/if}}
   </header>
   {{/match}}
 
-  <div class="content">
-    {{ content }}
-  </div>
+  <content>{{ content }}</content>
 </article>
 {{/post}}

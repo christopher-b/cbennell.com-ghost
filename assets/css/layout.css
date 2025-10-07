@@ -3,12 +3,6 @@ body {
   padding: 2vw;
 }
 
-footer {
-  min-inline-size: 100%;
-  border-block-start: thin solid var(--color-border);
-  padding-block: var(--s2);
-}
-
 body > header {
   @mixin sidebar 20rem;
 }
@@ -17,7 +11,13 @@ body > main {
   @mixin sidebar-content 50%;
 }
 
-.article-list {
+body > footer {
+  min-inline-size: 100%;
+  border-block-start: thin solid var(--color-border);
+  padding-block: var(--s2);
+}
+
+article-list {
   @mixin stack var(--s2);
 
   article:not(:last-child) {

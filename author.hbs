@@ -4,15 +4,15 @@
 <article>
   <header>
     {{#if profile_image}}
-      <img class="rounded-full" src="{{profile_image}}" alt="{{name}}" />
+      <img src="{{profile_image}}" alt="{{name}}" />
     {{/if}}
 
     <h1>{{name}}</h1>
 
     {{#if bio}}
-      <div class="content">
+      <content>
         {{bio}}
-      </div>
+      </content>
     {{/if}}
 
     {{!--
@@ -39,9 +39,10 @@
 
 {{!--
 <h2>Posts by this author</h2>
+<article-list>
 <div class="article-list">
 {{#foreach posts}}
   {{> "components/card"}}
 {{/foreach}}
-</div>
+</article-list>
 --}}
