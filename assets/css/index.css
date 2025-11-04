@@ -111,12 +111,13 @@ article[card] {
       background: var(--color-accent-light);
       border: 3px solid var(--color-accent-light);
       transform: scaleX(0);
-      transform-origin: left;
+      transform-origin: right;
       transition: transform 0.1s ease-out;
       z-index: -10;
     }
     &:hover::after {
       transform: scaleX(1);
+      transform-origin: left;
     }
   }
 }
