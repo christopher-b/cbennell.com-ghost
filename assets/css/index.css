@@ -192,8 +192,9 @@ article footer {
   }
 
   aside[comments] {
-    padding-block: var(--s3);
+    padding-block-start: var(--s3);
     color: #000000;
+    border-block-start: thin solid var(--color-border);
 
     @mixin dark-mode {
       color-scheme: auto;
