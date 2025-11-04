@@ -182,7 +182,6 @@ article footer {
   nav ul {
     @mixin cluster var(--s0), space-between;
     align-items: center;
-    border-block-end: thin solid var(--color-border);
     padding-block: var(--s3);
     padding-inline: 0;
     list-style: none;
