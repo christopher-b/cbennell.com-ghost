@@ -9,8 +9,7 @@ code[class*="language-"],
 pre[class*="language-"] {
   color: #f8f8f2;
   background: none;
-  font-family:
-    "Fira Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-family: "Fira Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -28,8 +27,8 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-  padding: 1em;
-  margin: 0;
+  /* padding: 1em; */
+  /* margin: 0; */
   /* margin: 0.5em 0; */
   overflow: auto;
   /* border-radius: 0.3em; */

@@ -10,6 +10,8 @@
 
 :root {
   color-scheme: light dark;
+  --text-color: light-dark(var(--color-neutral-900), var(--color-neutral-100));
+  --text-color-muted: light-dark(var(--color-neutral-600), var(--color-neutral-300));
 
   :focus-visible {
     outline: 3px solid var(--color-accent-light);
@@ -20,11 +22,10 @@
 body {
   background-attachment: fixed;
   background-image: url(../images/grain.svg);
-  color: var(--color-neutral-900);
+  color: var(--text-color);
 
   @mixin dark-mode {
     background-image: url(../images/grain-light.svg);
-    color: var(--color-neutral-100);
   }
 }
 
@@ -79,7 +80,7 @@ masthead h1 {
 }
 
 masthead img {
-  max-width: 6rem;
+  max-width: var(--s5);
   border-radius: 50%;
 }
 
@@ -120,13 +121,13 @@ article[card] {
   }
 }
 
+article > header {
+  margin-block-end: var(--s2);
+}
+
 article post-meta {
   font-size: var(--font-xs);
-  color: var(--color-neutral-600);
-
-  @mixin dark-mode {
-    color: var(--color-neutral-300);
-  }
+  color: var(--text-color-muted);
 }
 
 article tag-list {
@@ -159,12 +160,7 @@ article picture[feature] {
 }
 
 article > content {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  :is(h1, h2, h3, h4, h5, h6) {
     margin-block-start: var(--s3);
   }
 
@@ -176,12 +172,6 @@ article > content {
     /* Inline code samples */
     font-size: var(--font-sm);
   }
-
-  pre {
-    margin-block-start: var(--s1);
-    width: 100%;
-    font-size: var(--font-xs);
-  }
 }
 
 article footer {
@@ -189,7 +179,7 @@ article footer {
   margin-block-start: var(--s3);
 
   nav ul {
-    @mixin cluster 1rem, space-between;
+    @mixin cluster var(--s0), space-between;
     align-items: center;
     border-block-end: thin solid var(--color-border);
     padding-block: var(--s3);
@@ -216,8 +206,8 @@ article footer {
   margin-block-start: 0;
 }
 
-.ghost-display {
-  @mixin dark-mode {
-    background-color: #0f0f0f; /* pick your dark background */
-  }
-}
+/* .ghost-display { */
+/*   @mixin dark-mode { */
+/*     background-color: #0f0f0f; */
+/*   } */
+/* } */
