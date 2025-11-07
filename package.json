@@ -80,5 +80,8 @@
     },
     "posts_per_page": 15
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "patch-package": "^8.0.1"
+  }
 }
