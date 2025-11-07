@@ -82,7 +82,7 @@
     "posts_per_page": 15
   },
   "type": "module",
-  "overrides": {
-    "rollup": "4.52.5"
+  "resolutions": {
+    "rollup": "4.26.0"
   }
 }
