@@ -38,7 +38,6 @@
   "packageManager": "yarn@4.10.3",
   "devDependencies": {
     "archiver": "^7.0.1",
-    "patch-package": "^8.0.1",
     "postcss": "^8.5.6",
     "postcss-mixins": "^12.1.2",
     "prettier": "^3.6.2",
@@ -81,8 +80,5 @@
     },
     "posts_per_page": 15
   },
-  "type": "module",
-  "resolutions": {
-    "rollup": "4.26.0"
-  }
+  "type": "module"
 }
