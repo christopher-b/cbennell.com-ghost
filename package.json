@@ -81,7 +81,7 @@
     "posts_per_page": 15
   },
   "type": "module",
-  "dependencies": {
-    "patch-package": "^8.0.1"
+  "resolutions": {
+    "rollup": "4.52.5"
   }
 }
