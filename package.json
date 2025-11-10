@@ -80,8 +80,5 @@
     },
     "posts_per_page": 15
   },
-  "type": "module",
-  "resolutions": {
-    "rollup": "4.52.5"
-  }
+  "type": "module"
 }
