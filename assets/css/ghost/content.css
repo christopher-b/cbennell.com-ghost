@@ -235,5 +235,7 @@ content {
 
   /* Separator */
   /*----------*/
-  /* hr { } */
+  hr {
+    margin-block: var(--s3);
+  }
 }
