@@ -226,7 +226,11 @@ content {
 
   /* Block Quote */
   /*----------*/
-  /* blockquote { } */
+  blockquote {
+    font-style: italic;
+    border-inline-start: 2px solid var(--color-accent-light);
+    padding-left: var(--s1);
+  }
   /* .kg-blockquote-alt { } */
 
   /* Separator */
