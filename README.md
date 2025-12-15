@@ -1,6 +1,6 @@
 # cbennell.com Ghost Theme
 
-This is the Ghost CMS theme for cbennell.com. It's based on [Sidelight](github.com/christopher-b/sidelight), a Vite/TailwindCSS starter theme.
+This is the Ghost CMS theme for cbennell.com. It's based on [Vapour](github.com/christopher-b/vapour), a Vite/TailwindCSS starter theme.
 
 ## How to Use This Theme
 

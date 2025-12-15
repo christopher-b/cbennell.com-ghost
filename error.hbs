@@ -13,12 +13,14 @@
   {{ghost_head}}
 </head>
 <body class="{{body_class}}">
+  <a href="#main-content" class="skip-to-content">Skip to content</a>
+
   <header>
     {{> components/masthead}}
     {{ navigation }}
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <h1>Error: {{statusCode}}</h2>
     <p>&ldquo;{{message}}&rdquo;</p>
     <p><a href="{{@site.url}}">Return home →</a></p>

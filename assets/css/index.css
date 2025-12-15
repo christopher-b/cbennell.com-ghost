@@ -29,6 +29,22 @@ body {
   }
 }
 
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: var(--s0);
+  z-index: 999;
+  padding: var(--s-2) var(--s-2);
+  background-color: var(--color-accent-med);
+  color: var(--color-accent-light);
+  text-decoration: none;
+  font-weight: bold;
+
+  &:focus {
+    left: var(--s0);
+  }
+}
+
 body > header {
   h1 {
     font-size: var(--font-lg);

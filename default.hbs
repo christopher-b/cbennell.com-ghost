@@ -16,14 +16,16 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   </head>
   <body class="{{ body_class }}">
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+
     <header>
       {{> components/masthead}}
       {{ navigation }}
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       {{{ body }}}
-   </main>
+    </main>
 
     {{> components/footer }}
 
